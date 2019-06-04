@@ -1,1 +1,3 @@
 ÅÀ³æ²©¿Í    https://www.cnblogs.com/jjg0519/p/6702729.html
+
+.Net Core¹ÙÍø½Ì³Ì  https://docs.microsoft.com/zh-cn/aspnet/core/data/ef-mvc/intro?view=aspnetcore-2.2
