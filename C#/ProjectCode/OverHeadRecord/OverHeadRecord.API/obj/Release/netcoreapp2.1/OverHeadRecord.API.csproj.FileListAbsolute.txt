@@ -11,3 +11,4 @@ F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\obj\Release\net
 F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\obj\Release\netcoreapp2.1\OverHeadRecord.API.RazorTargetAssemblyInfo.cache
 F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\obj\Release\netcoreapp2.1\OverHeadRecord.API.dll
 F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\obj\Release\netcoreapp2.1\OverHeadRecord.API.pdb
+F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\obj\Release\netcoreapp2.1\OverHeadRecord.API.csprojAssemblyReference.cache

@@ -2,4 +2,6 @@
 
 .Net Core官网教程  https://docs.microsoft.com/zh-cn/aspnet/core/data/ef-mvc/intro?view=aspnetcore-2.2
 
+.Net Core 部署至IIS  https://cloud.tencent.com/developer/news/240501
+
 简单跨越配置 https://www.cnblogs.com/witeem/p/10100570.html
