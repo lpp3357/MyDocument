@@ -4,4 +4,7 @@
 
 .Net Core 部署至IIS  https://cloud.tencent.com/developer/news/240501
 
+.Net Core Swagger 配置  https://www.cnblogs.com/wskxy/p/10123714.html
+
+
 简单跨越配置 https://www.cnblogs.com/witeem/p/10100570.html
