@@ -1,10 +1,14 @@
 爬虫博客    https://www.cnblogs.com/jjg0519/p/6702729.html
 
+简单跨越配置 https://www.cnblogs.com/witeem/p/10100570.html
+
 .Net Core官网教程  https://docs.microsoft.com/zh-cn/aspnet/core/data/ef-mvc/intro?view=aspnetcore-2.2
 
 .Net Core 部署至IIS  https://cloud.tencent.com/developer/news/240501
 
 .Net Core Swagger 配置  https://www.cnblogs.com/wskxy/p/10123714.html
 
+.Net Core 跨越配置 https://www.cnblogs.com/xiaoyaojian/p/4763016.html
+	      官网 https://docs.microsoft.com/zh-cn/aspnet/core/security/cors?view=aspnetcore-2.2#ecors
 
-简单跨越配置 https://www.cnblogs.com/witeem/p/10100570.html
+

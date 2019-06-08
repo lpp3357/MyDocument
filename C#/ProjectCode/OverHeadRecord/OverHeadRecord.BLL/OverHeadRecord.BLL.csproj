@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OverHeadRecord.DAO\OverHeadRecord.DAO.csproj" />
+    <ProjectReference Include="..\OverHeadRecord.Model\OverHeadRecord.Model.csproj" />
+  </ItemGroup>
+
+</Project>

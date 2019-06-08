@@ -26,3 +26,10 @@ E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\obj\Debug\netcore
 E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\obj\Debug\netcoreapp2.1\OverHeadRecord.API.pdb
 E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\bin\Debug\netcoreapp2.1\OverHeadRecord.API.xml
 E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\obj\Debug\netcoreapp2.1\OverHeadRecord.API.csprojAssemblyReference.cache
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\bin\Debug\netcoreapp2.1\OverHeadRecord.BLL.dll
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\bin\Debug\netcoreapp2.1\OverHeadRecord.DAO.dll
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\bin\Debug\netcoreapp2.1\OverHeadRecord.Model.dll
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\bin\Debug\netcoreapp2.1\OverHeadRecord.BLL.pdb
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\bin\Debug\netcoreapp2.1\OverHeadRecord.Model.pdb
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\bin\Debug\netcoreapp2.1\OverHeadRecord.DAO.pdb
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\obj\Debug\netcoreapp2.1\OverHeadRecord.API.csproj.CopyComplete

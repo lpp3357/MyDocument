@@ -21,7 +21,7 @@ namespace OverHeadRecord.API.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return "value";
+            return aabb.aa;
         }
 
         // POST api/values

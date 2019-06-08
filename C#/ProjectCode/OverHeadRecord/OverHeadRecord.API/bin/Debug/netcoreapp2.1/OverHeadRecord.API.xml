@@ -4,5 +4,27 @@
         <name>OverHeadRecord.API</name>
     </assembly>
     <members>
+        <member name="T:OverHeadRecord.API.Controllers.ClassController">
+            <summary>
+            分类控制器
+            </summary>
+        </member>
+        <member name="F:OverHeadRecord.API.Controllers.ClassController.classBLL">
+            <summary>
+            分类逻辑处理类
+            </summary>
+        </member>
+        <member name="M:OverHeadRecord.API.Controllers.ClassController.SelectMainCalss(OverHeadRecord.Model.V1.MainClassModel)">
+            <summary>
+            查询主分类列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OverHeadRecord.API.Controllers.ClassController.SelectSubCalss">
+            <summary>
+            查询子级分类列表
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>

@@ -1,0 +1,9 @@
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\bin\Release\netcoreapp2.1\OverHeadRecord.Model.deps.json
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\bin\Release\netcoreapp2.1\OverHeadRecord.Model.dll
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\bin\Release\netcoreapp2.1\OverHeadRecord.Model.pdb
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\obj\Release\netcoreapp2.1\OverHeadRecord.Model.csprojAssemblyReference.cache
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\obj\Release\netcoreapp2.1\OverHeadRecord.Model.csproj.CoreCompileInputs.cache
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\obj\Release\netcoreapp2.1\OverHeadRecord.Model.AssemblyInfoInputs.cache
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\obj\Release\netcoreapp2.1\OverHeadRecord.Model.AssemblyInfo.cs
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\obj\Release\netcoreapp2.1\OverHeadRecord.Model.dll
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\obj\Release\netcoreapp2.1\OverHeadRecord.Model.pdb

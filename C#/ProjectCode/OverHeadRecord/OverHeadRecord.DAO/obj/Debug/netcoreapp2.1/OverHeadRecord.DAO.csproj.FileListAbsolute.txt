@@ -1,0 +1,12 @@
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.DAO\bin\Debug\netcoreapp2.1\OverHeadRecord.DAO.deps.json
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.DAO\bin\Debug\netcoreapp2.1\OverHeadRecord.DAO.dll
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.DAO\obj\Debug\netcoreapp2.1\OverHeadRecord.DAO.csprojAssemblyReference.cache
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.DAO\obj\Debug\netcoreapp2.1\OverHeadRecord.DAO.csproj.CoreCompileInputs.cache
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.DAO\obj\Debug\netcoreapp2.1\OverHeadRecord.DAO.AssemblyInfoInputs.cache
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.DAO\obj\Debug\netcoreapp2.1\OverHeadRecord.DAO.AssemblyInfo.cs
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.DAO\bin\Debug\netcoreapp2.1\OverHeadRecord.DAO.pdb
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.DAO\obj\Debug\netcoreapp2.1\OverHeadRecord.DAO.dll
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.DAO\obj\Debug\netcoreapp2.1\OverHeadRecord.DAO.pdb
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.DAO\bin\Debug\netcoreapp2.1\OverHeadRecord.Model.dll
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.DAO\bin\Debug\netcoreapp2.1\OverHeadRecord.Model.pdb
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.DAO\obj\Debug\netcoreapp2.1\OverHeadRecord.DAO.csproj.CopyComplete

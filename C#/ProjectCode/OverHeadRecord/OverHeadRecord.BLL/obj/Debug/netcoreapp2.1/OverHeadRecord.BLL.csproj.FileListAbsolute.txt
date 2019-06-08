@@ -1,0 +1,14 @@
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.BLL\bin\Debug\netcoreapp2.1\OverHeadRecord.BLL.deps.json
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.BLL\bin\Debug\netcoreapp2.1\OverHeadRecord.BLL.dll
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.BLL\bin\Debug\netcoreapp2.1\OverHeadRecord.BLL.pdb
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.BLL\obj\Debug\netcoreapp2.1\OverHeadRecord.BLL.csprojAssemblyReference.cache
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.BLL\obj\Debug\netcoreapp2.1\OverHeadRecord.BLL.csproj.CoreCompileInputs.cache
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.BLL\obj\Debug\netcoreapp2.1\OverHeadRecord.BLL.AssemblyInfoInputs.cache
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.BLL\obj\Debug\netcoreapp2.1\OverHeadRecord.BLL.AssemblyInfo.cs
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.BLL\obj\Debug\netcoreapp2.1\OverHeadRecord.BLL.dll
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.BLL\obj\Debug\netcoreapp2.1\OverHeadRecord.BLL.pdb
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.BLL\bin\Debug\netcoreapp2.1\OverHeadRecord.DAO.dll
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.BLL\bin\Debug\netcoreapp2.1\OverHeadRecord.Model.dll
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.BLL\bin\Debug\netcoreapp2.1\OverHeadRecord.DAO.pdb
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.BLL\bin\Debug\netcoreapp2.1\OverHeadRecord.Model.pdb
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.BLL\obj\Debug\netcoreapp2.1\OverHeadRecord.BLL.csproj.CopyComplete
