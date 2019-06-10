@@ -34,3 +34,11 @@ E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\bin\Release\netco
 E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\bin\Release\netcoreapp2.1\OverHeadRecord.DAO.pdb
 E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\obj\Release\netcoreapp2.1\OverHeadRecord.API.csproj.CopyComplete
 E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\bin\Release\netcoreapp2.1\OverHeadRecord.API.xml
+F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\bin\Release\netcoreapp2.1\OverHeadRecord.API.xml
+F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\bin\Release\netcoreapp2.1\OverHeadRecord.BLL.dll
+F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\bin\Release\netcoreapp2.1\OverHeadRecord.DAO.dll
+F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\bin\Release\netcoreapp2.1\OverHeadRecord.Model.dll
+F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\bin\Release\netcoreapp2.1\OverHeadRecord.BLL.pdb
+F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\bin\Release\netcoreapp2.1\OverHeadRecord.Model.pdb
+F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\bin\Release\netcoreapp2.1\OverHeadRecord.DAO.pdb
+F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\obj\Release\netcoreapp2.1\OverHeadRecord.API.csproj.CopyComplete

@@ -7,3 +7,12 @@ E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\obj\Debug\netco
 E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\obj\Debug\netcoreapp2.1\OverHeadRecord.Model.AssemblyInfo.cs
 E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\obj\Debug\netcoreapp2.1\OverHeadRecord.Model.dll
 E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\obj\Debug\netcoreapp2.1\OverHeadRecord.Model.pdb
+F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\obj\Debug\netcoreapp2.1\OverHeadRecord.Model.dll
+F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\obj\Debug\netcoreapp2.1\OverHeadRecord.Model.pdb
+F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\bin\Debug\netcoreapp2.1\OverHeadRecord.Model.deps.json
+F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\bin\Debug\netcoreapp2.1\OverHeadRecord.Model.dll
+F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\bin\Debug\netcoreapp2.1\OverHeadRecord.Model.pdb
+F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\obj\Debug\netcoreapp2.1\OverHeadRecord.Model.csprojAssemblyReference.cache
+F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\obj\Debug\netcoreapp2.1\OverHeadRecord.Model.csproj.CoreCompileInputs.cache
+F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\obj\Debug\netcoreapp2.1\OverHeadRecord.Model.AssemblyInfoInputs.cache
+F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\obj\Debug\netcoreapp2.1\OverHeadRecord.Model.AssemblyInfo.cs

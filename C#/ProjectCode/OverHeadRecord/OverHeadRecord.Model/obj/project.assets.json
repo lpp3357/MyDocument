@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\MyDocument\\C#\\ProjectCode\\OverHeadRecord\\OverHeadRecord.Model\\OverHeadRecord.Model.csproj",
+      "projectUniqueName": "F:\\我的文档\\C#\\ProjectCode\\OverHeadRecord\\OverHeadRecord.Model\\OverHeadRecord.Model.csproj",
       "projectName": "OverHeadRecord.Model",
-      "projectPath": "E:\\MyDocument\\C#\\ProjectCode\\OverHeadRecord\\OverHeadRecord.Model\\OverHeadRecord.Model.csproj",
+      "projectPath": "F:\\我的文档\\C#\\ProjectCode\\OverHeadRecord\\OverHeadRecord.Model\\OverHeadRecord.Model.csproj",
       "packagesPath": "C:\\Users\\Mr.Li\\.nuget\\packages\\",
-      "outputPath": "E:\\MyDocument\\C#\\ProjectCode\\OverHeadRecord\\OverHeadRecord.Model\\obj\\",
+      "outputPath": "F:\\我的文档\\C#\\ProjectCode\\OverHeadRecord\\OverHeadRecord.Model\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

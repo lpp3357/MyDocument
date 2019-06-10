@@ -96,7 +96,13 @@ namespace OverHeadRecord.API
             }
 
             //注册MVC中间件
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=swagger}/{action=index}/{id?}"
+                    );
+            });
 
             //注册跨域配置中间件
             app.UseCors(MyAllowSpecificOrigins);
