@@ -14,17 +14,38 @@
             分类逻辑处理类
             </summary>
         </member>
-        <member name="M:OverHeadRecord.API.Controllers.ClassController.SelectMainCalss(OverHeadRecord.Model.V1.MainClassModel)">
+        <member name="M:OverHeadRecord.API.Controllers.ClassController.QueryMainClass">
             <summary>
             查询主分类列表
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OverHeadRecord.API.Controllers.ClassController.SelectSubCalss">
+        <member name="M:OverHeadRecord.API.Controllers.ClassController.QuerySubClass">
             <summary>
             查询子级分类列表
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:OverHeadRecord.API.Controllers.ClassController.AddMainClass(OverHeadRecord.Model.V1.MainClassModel)">
+            <summary>
+            新增主分类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:OverHeadRecord.API.Controllers.ResultClass">
+            <summary>
+            返回结果
+            </summary>
+        </member>
+        <member name="P:OverHeadRecord.API.Controllers.ResultClass.code">
+            <summary>
+            代码
+            </summary>
+        </member>
+        <member name="P:OverHeadRecord.API.Controllers.ResultClass.msg">
+            <summary>
+            信息
+            </summary>
         </member>
     </members>
 </doc>

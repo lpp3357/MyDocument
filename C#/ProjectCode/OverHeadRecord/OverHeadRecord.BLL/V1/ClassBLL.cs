@@ -42,6 +42,32 @@ namespace OverHeadRecord.BLL.V1
         }
 
         /// <summary>
+        /// 新增主分类 
+        /// </summary>
+        /// <returns></returns>
+        public bool AddMainClass(MainClassModel model)
+        {
+            return MainDao.InsertMainClass(model);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /// <summary>
         /// 查询次级分类列表
         /// </summary>
         /// <returns></returns>
@@ -53,15 +79,4 @@ namespace OverHeadRecord.BLL.V1
     }
 
 
-
-
-
-    //public class ClassBLL<T> where T : new()
-    //{
-    //    private T tBLL;
-    //    public ClassBLL()
-    //    {
-    //        tBLL = new T();
-    //    }
-    //}
 }
