@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="sqlSugarCore" Version="5.0.0.6" />
+  </ItemGroup>
+
 </Project>

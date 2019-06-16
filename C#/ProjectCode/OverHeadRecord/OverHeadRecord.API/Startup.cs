@@ -61,20 +61,30 @@ namespace OverHeadRecord.API
                 builder =>
                 {
                     //可请求域设置
-                    //builder.WithOrigins("http://example.com");//指定只有来至http://example.com的域可以请求
-                    builder.AllowAnyOrigin();//所有的域都可以请求
+                    builder.AllowAnyOrigin()//所有的域都可以请求
+                    .AllowAnyMethod()//允许所有的HTTP方法
+                    .AllowAnyHeader();//允许所有的请求头
 
-                    //可请求方法设置
-                    builder.WithHeaders("GET");//指定哪些HTTP方法允许访问
-                    //builder.AllowAnyHeader();//允许所有的HTTP方法
 
-                    //可请求头设置
-                    //一个CORS先行请求也许包含了Access - Request - Headers头，列出应用程序的HTTP请求头。
-                    //builder.WithHeaders("accept", "content-type", "origin", "x-custom-header");//指定允许的请求头
-                    builder.AllowAnyHeader();//允许所有的请求头
+
+
+                    ////可请求域设置
+                    ////builder.WithOrigins("http://example.com");//指定只有来至http://example.com的域可以请求
+                    //builder.AllowAnyOrigin();//所有的域都可以请求
+
+                    ////可请求方法设置
+                    ////builder.AllowAnyMethod("GET");//指定哪些HTTP方法允许访问
+                    //builder.AllowAnyMethod();//允许所有的HTTP方法
+
+                    ////可请求头设置
+                    ////一个CORS先行请求也许包含了Access - Request - Headers头，列出应用程序的HTTP请求头。
+                    ////builder.WithHeaders("accept", "content-type", "origin", "x-custom-header");//指定允许的请求头
+                    //builder.AllowAnyHeader();//允许所有的请求头
 
                     //设置先行请求的过期时间    Access-Control-Max-Age头指定了先行请求的响应可以缓存的时间。
                     //builder.SetPreflightMaxAge(TimeSpan.FromSeconds(2520));
+
+                    //builder.AllowCredentials();//指定处理cookie
                 });
             });
 
@@ -100,7 +110,7 @@ namespace OverHeadRecord.API
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=swagger}/{action=index}/{id?}"
+                    template: "{controller}/{action}/{id?}"
                     );
             });
 

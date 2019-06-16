@@ -45,36 +45,60 @@ namespace OverHeadRecord.BLL.V1
         /// 新增主分类 
         /// </summary>
         /// <returns></returns>
-        public bool AddMainClass(MainClassModel model)
+        public bool AddMainClass(string MainClassValue, out string msg)
         {
-            return MainDao.InsertMainClass(model);
+            MainClassModel model = new MainClassModel
+            {
+                ValueName = MainClassValue,
+                NumberID = DateTime.Now.ToString("yyyyMMddHHmmssfff"),
+                State = 1
+            };
+            return MainDao.InsertMainClass(model, out msg);
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        /// <summary>
+        /// 修改主分类 
+        /// </summary>
+        /// <returns></returns>
+        public bool UpdateMainClass(MainClassModel model, out string msg)
+        {
+            return MainDao.UpdateMainClass(model, out msg);
+        }
 
 
         /// <summary>
         /// 查询次级分类列表
         /// </summary>
         /// <returns></returns>
-        public List<SubClassModel> SelectSubClass()
+        public List<SubClassModel> SelectSubClass(string ParentID)
         {
-            DataTable data = SubDao.SelectSubClass();
+            DataTable data = SubDao.SelectSubClass(ParentID);
             return DataConversion.DataTableConvertToList<SubClassModel>(data);
+        }
+
+        /// <summary>
+        /// 新增次分类 
+        /// </summary>
+        /// <returns></returns>
+        public bool AddSubClass(string SubClassValue, string ParentID, out string msg)
+        {
+            SubClassModel model = new SubClassModel
+            {
+                NumberID = DateTime.Now.ToString("yyyyMMddHHmmssfff"),
+                ValueName = SubClassValue,
+                ParentID = ParentID,
+                State = 1
+            };
+            return SubDao.InsertSubClass(model, out msg);
+        }
+
+        /// <summary>
+        /// 修改次分类 
+        /// </summary>
+        /// <returns></returns>
+        public bool UpdateSubClass(SubClassModel model, out string msg)
+        {
+            return SubDao.UpdateSubClass(model, out msg);
         }
     }
 

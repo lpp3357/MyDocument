@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SqlSugar;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -12,6 +13,7 @@ namespace OverHeadRecord.Model.V1
         /// <summary>
         /// 编号ID
         /// </summary>
+        [SugarColumn(IsPrimaryKey = true)] //是主键 
         public string NumberID { get; set; }
 
         /// <summary>

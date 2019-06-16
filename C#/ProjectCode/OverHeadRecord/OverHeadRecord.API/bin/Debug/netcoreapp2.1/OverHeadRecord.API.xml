@@ -20,15 +20,33 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OverHeadRecord.API.Controllers.ClassController.QuerySubClass">
+        <member name="M:OverHeadRecord.API.Controllers.ClassController.AddMainClass(System.String)">
             <summary>
-            查询子级分类列表
+            新增主分类
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OverHeadRecord.API.Controllers.ClassController.AddMainClass(OverHeadRecord.Model.V1.MainClassModel)">
+        <member name="M:OverHeadRecord.API.Controllers.ClassController.UpdateMainClass(OverHeadRecord.Model.V1.MainClassModel)">
             <summary>
-            新增主分类
+            修改主分类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OverHeadRecord.API.Controllers.ClassController.QuerySubClass(System.String)">
+            <summary>
+            查询次分类列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OverHeadRecord.API.Controllers.ClassController.AddSubClass(System.String,System.String)">
+            <summary>
+            新增次分类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OverHeadRecord.API.Controllers.ClassController.UpdateSubClass(OverHeadRecord.Model.V1.SubClassModel)">
+            <summary>
+            修改次分类
             </summary>
             <returns></returns>
         </member>
@@ -47,5 +65,6 @@
             信息
             </summary>
         </member>
+        <!-- 对于成员“P:OverHeadRecord.API.Controllers.ResultClass.success”忽略有格式错误的 XML 注释 -->
     </members>
 </doc>

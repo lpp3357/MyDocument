@@ -15,7 +15,7 @@ namespace OverHeadRecord.DAO.DataConfig
     /// <summary>
     /// SqlSugar 数据库配置类
     /// </summary>
-    public class DBContextSugar
+    public class DBContextSugar<T> where  T:class,new ()
     {
         /// <summary>
         /// 定义数据库连接对象
@@ -45,25 +45,48 @@ namespace OverHeadRecord.DAO.DataConfig
          * 定义实体类的数据操作
          */
 
-        /// <summary>
-        /// 对MainClassModel表的操作
-        /// </summary>
-        public SimpleClient<MainClassModel> MainClassDb { get { return new SimpleClient<MainClassModel>(Db); } }
+        ///// <summary>
+        ///// 对MainClassModel表的操作
+        ///// </summary>
+        //public SimpleClient<MainClassModel> MainClassDb { get { return new SimpleClient<MainClassModel>(Db); } }
+
+        ///// <summary>
+        ///// 对OverHeadModel表的操作
+        ///// </summary>
+        //public SimpleClient<OverHeadModel> OverHeadDb { get { return new SimpleClient<OverHeadModel>(Db); } }
+
+        ///// <summary>
+        ///// 对SubClassModel表的操作
+        ///// </summary>
+        //public SimpleClient<SubClassModel> SubClassDb { get { return new SimpleClient<SubClassModel>(Db); } }
+
+        ///// <summary>
+        ///// 对UserModel表的操作
+        ///// </summary>
+        //public SimpleClient<UserModel> UserDb { get { return new SimpleClient<UserModel>(Db); } }
+
+        public SimpleClient<T> CurrentDb { get { return new SimpleClient<T>(Db); } }//用来处理T表的常用操作
+
 
         /// <summary>
-        /// 对OverHeadModel表的操作
+        /// 根据主键删除
         /// </summary>
-        public SimpleClient<OverHeadModel> OverHeadDb { get { return new SimpleClient<OverHeadModel>(Db); } }
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public virtual bool Delete(dynamic id)
+        {
+            return CurrentDb.Delete(id);
+        }
+
 
         /// <summary>
-        /// 对SubClassModel表的操作
+        /// 更新
         /// </summary>
-        public SimpleClient<SubClassModel> SubClassDb { get { return new SimpleClient<SubClassModel>(Db); } }
-
-        /// <summary>
-        /// 对UserModel表的操作
-        /// </summary>
-        public SimpleClient<UserModel> UserDb { get { return new SimpleClient<UserModel>(Db); } }
-
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public virtual bool Update(T obj)
+        {
+            return CurrentDb.Update(obj);
+        }
     }
 }

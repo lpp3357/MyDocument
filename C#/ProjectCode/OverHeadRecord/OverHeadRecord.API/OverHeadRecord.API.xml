@@ -14,17 +14,57 @@
             分类逻辑处理类
             </summary>
         </member>
-        <member name="M:OverHeadRecord.API.Controllers.ClassController.SelectMainCalss(OverHeadRecord.Model.V1.MainClassModel)">
+        <member name="M:OverHeadRecord.API.Controllers.ClassController.QueryMainClass">
             <summary>
             查询主分类列表
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OverHeadRecord.API.Controllers.ClassController.SelectSubCalss">
+        <member name="M:OverHeadRecord.API.Controllers.ClassController.AddMainClass(System.String)">
             <summary>
-            查询子级分类列表
+            新增主分类
             </summary>
             <returns></returns>
         </member>
+        <member name="M:OverHeadRecord.API.Controllers.ClassController.UpdateMainClass(OverHeadRecord.Model.V1.MainClassModel)">
+            <summary>
+            修改主分类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OverHeadRecord.API.Controllers.ClassController.QuerySubClass(System.String)">
+            <summary>
+            查询次分类列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OverHeadRecord.API.Controllers.ClassController.AddSubClass(System.String,System.String)">
+            <summary>
+            新增次分类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OverHeadRecord.API.Controllers.ClassController.UpdateSubClass(OverHeadRecord.Model.V1.SubClassModel)">
+            <summary>
+            修改次分类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:OverHeadRecord.API.Controllers.ResultClass">
+            <summary>
+            返回结果
+            </summary>
+        </member>
+        <member name="P:OverHeadRecord.API.Controllers.ResultClass.code">
+            <summary>
+            代码
+            </summary>
+        </member>
+        <member name="P:OverHeadRecord.API.Controllers.ResultClass.msg">
+            <summary>
+            信息
+            </summary>
+        </member>
+        <!-- 对于成员“P:OverHeadRecord.API.Controllers.ResultClass.success”忽略有格式错误的 XML 注释 -->
     </members>
 </doc>
