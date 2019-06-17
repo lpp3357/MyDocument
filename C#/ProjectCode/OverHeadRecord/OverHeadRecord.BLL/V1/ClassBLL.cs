@@ -17,19 +17,17 @@ namespace OverHeadRecord.BLL.V1
         /// <summary>
         /// 主分类数据处理类
         /// </summary>
-        private MainClassDao MainDao;
+        private MainClassDao MainDao = new MainClassDao();
 
         /// <summary>
-        /// 次级分类数据处理类
+        /// 次分类数据处理类
         /// </summary>
-        private SubClassDao SubDao;
+        private SubClassDao SubDao = new SubClassDao();
 
-        public ClassBLL()
-        {
-            MainDao = new MainClassDao();
-            SubDao = new SubClassDao();
-        }
-
+        /// <summary>
+        /// 从分类数据处理类
+        /// </summary>
+        private FromClassDao FromDao = new FromClassDao();
 
         /// <summary>
         /// 查询主分类列表
@@ -50,7 +48,7 @@ namespace OverHeadRecord.BLL.V1
             MainClassModel model = new MainClassModel
             {
                 ValueName = MainClassValue,
-                NumberID = DateTime.Now.ToString("yyyyMMddHHmmssfff"),
+                NumberID = CreateNumberClass.CreateNumber(),
                 State = 1
             };
             return MainDao.InsertMainClass(model, out msg);
@@ -67,12 +65,12 @@ namespace OverHeadRecord.BLL.V1
 
 
         /// <summary>
-        /// 查询次级分类列表
+        /// 查询次分类列表
         /// </summary>
         /// <returns></returns>
-        public List<SubClassModel> SelectSubClass(string ParentID)
+        public List<SubClassModel> QuerySubClass(string ParentID)
         {
-            DataTable data = SubDao.SelectSubClass(ParentID);
+            DataTable data = SubDao.QuerytSubClass(ParentID);
             return DataConversion.DataTableConvertToList<SubClassModel>(data);
         }
 
@@ -84,7 +82,7 @@ namespace OverHeadRecord.BLL.V1
         {
             SubClassModel model = new SubClassModel
             {
-                NumberID = DateTime.Now.ToString("yyyyMMddHHmmssfff"),
+                NumberID = CreateNumberClass.CreateNumber(),
                 ValueName = SubClassValue,
                 ParentID = ParentID,
                 State = 1
@@ -100,7 +98,42 @@ namespace OverHeadRecord.BLL.V1
         {
             return SubDao.UpdateSubClass(model, out msg);
         }
+
+
+        /// <summary>
+        /// 查询从分类列表
+        /// </summary>
+        /// <returns></returns>
+        public List<FromClassModel> QueryFromClass(string ParentID)
+        {
+            DataTable data = FromDao.QueryFromClass(ParentID);
+            return DataConversion.DataTableConvertToList<FromClassModel>(data);
+        }
+
+        /// <summary>
+        /// 新增从分类 
+        /// </summary>
+        /// <returns></returns>
+        public bool AddFromClass(string SubClassValue, string ParentID, out string msg)
+        {
+            FromClassModel model = new FromClassModel
+            {
+                NumberID = CreateNumberClass.CreateNumber(),
+                ValueName = SubClassValue,
+                ParentID = ParentID,
+                State = 1
+            };
+            return FromDao.InsertFromClass(model, out msg);
+        }
+
+        /// <summary>
+        /// 修改从分类 
+        /// </summary>
+        /// <returns></returns>
+        public bool UpdateFromClass(FromClassModel model, out string msg)
+        {
+            return FromDao.UpdateFromClass(model, out msg);
+        }
+
     }
-
-
 }

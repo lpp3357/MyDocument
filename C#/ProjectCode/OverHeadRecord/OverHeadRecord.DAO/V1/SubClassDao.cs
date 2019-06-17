@@ -52,7 +52,7 @@ namespace OverHeadRecord.DAO.V1
         /// 查询次级分类
         /// </summary>
         /// <returns></returns>
-        public DataTable SelectSubClass(string ParentID)
+        public DataTable QuerytSubClass(string ParentID)
         {
             var SubData = Db.Queryable<SubClassModel, MainClassModel>((sub, main) => new object[] {
                 JoinType.Left,sub.ParentID==main.NumberID

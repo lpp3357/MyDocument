@@ -65,9 +65,6 @@ namespace OverHeadRecord.API
                     .AllowAnyMethod()//允许所有的HTTP方法
                     .AllowAnyHeader();//允许所有的请求头
 
-
-
-
                     ////可请求域设置
                     ////builder.WithOrigins("http://example.com");//指定只有来至http://example.com的域可以请求
                     //builder.AllowAnyOrigin();//所有的域都可以请求

@@ -50,18 +50,6 @@ namespace OverHeadRecord.DAO.V1
         }
 
         /// <summary>
-        /// 删除主分类
-        /// </summary>
-        /// <param name="model"></param>
-        /// <param name="msg"></param>
-        /// <returns></returns>
-        public bool DeleteMainClass(MainClassModel model)
-        {
-            return CurrentDb.Delete(model);
-        }
-
-
-        /// <summary>
         /// 查询主分类
         /// </summary>
         /// <returns></returns>

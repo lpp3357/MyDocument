@@ -5,10 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using OverHeadRecord.BLL.Utils;
 using OverHeadRecord.BLL.V1;
 using OverHeadRecord.Model.V1;
 
-namespace OverHeadRecord.API.Controllers
+namespace OverHeadRecord.API.Controllers.v1
 {
     /// <summary>
     /// 分类控制器
@@ -22,28 +23,37 @@ namespace OverHeadRecord.API.Controllers
         /// 分类逻辑处理类
         /// </summary>
         private ClassBLL classBLL = new ClassBLL();
-
+        /// <summary>
+        /// 返回的消息
+        /// </summary>
         private string msg = string.Empty;
+        /// <summary>
+        /// 返回的结果
+        /// </summary>
+        private bool result = false;
+        /// <summary>
+        /// 返回的数据
+        /// </summary>
+        private object data = null;
 
         /// <summary>
-        /// 查询主分类列表
+        /// 查询主分类列表   v1
         /// </summary>
         /// <returns></returns>
         [HttpPost("QueryMainClass")]
         public JsonResult QueryMainClass()
         {
-            List<MainClassModel> list = classBLL.SelectMainClass();
-            return Json(new ResultClass(true, list));
+            data = classBLL.SelectMainClass();
+            return Json(new ResultClass(true, data));
         }
 
         /// <summary>
-        /// 新增主分类
+        /// 新增主分类    v1
         /// </summary>
         /// <returns></returns>
         [HttpPost("AddMainClass")]
         public JsonResult AddMainClass(string ValueName)
         {
-            bool result = false;
             if (!string.IsNullOrWhiteSpace(ValueName))
             {
                 result = classBLL.AddMainClass(ValueName, out msg);
@@ -52,13 +62,12 @@ namespace OverHeadRecord.API.Controllers
         }
 
         /// <summary>
-        /// 修改主分类
+        /// 修改主分类    v1
         /// </summary>
         /// <returns></returns>
         [HttpPost("UpdateMainClass")]
         public JsonResult UpdateMainClass(MainClassModel model)
         {
-            bool result = false;
             if (model != null)
             {
                 result = classBLL.UpdateMainClass(model, out msg);
@@ -68,28 +77,26 @@ namespace OverHeadRecord.API.Controllers
 
 
         /// <summary>
-        /// 查询次分类列表
+        /// 查询次分类列表    v1
         /// </summary>
         /// <returns></returns>
         [HttpPost("QuerySubClass")]
         public JsonResult QuerySubClass(string ParentID)
         {
-            List<SubClassModel> list = null;
             if (!string.IsNullOrWhiteSpace(ParentID))
             {
-                list = classBLL.SelectSubClass(ParentID);
+                data = classBLL.QuerySubClass(ParentID);
             }
-            return Json(new ResultClass(true, list));
+            return Json(new ResultClass(true, data));
         }
 
         /// <summary>
-        /// 新增次分类
+        /// 新增次分类    v1
         /// </summary>
         /// <returns></returns>
         [HttpPost("AddSubClass")]
         public JsonResult AddSubClass(string ValueName, string ParentID)
         {
-            bool result = false;
             if (!string.IsNullOrWhiteSpace(ValueName) && !string.IsNullOrWhiteSpace(ParentID))
             {
                 result = classBLL.AddSubClass(ValueName, ParentID, out msg);
@@ -98,53 +105,60 @@ namespace OverHeadRecord.API.Controllers
         }
 
         /// <summary>
-        /// 修改次分类
+        /// 修改次分类    v1
         /// </summary>
         /// <returns></returns>
         [HttpPost("UpdateSubClass")]
         public JsonResult UpdateSubClass(SubClassModel model)
         {
-            bool result = false;
             if (model != null)
             {
                 result = classBLL.UpdateSubClass(model, out msg);
             }
             return Json(new ResultClass(result, null, msg));
         }
-    }
 
-    /// <summary>
-    /// 返回结果
-    /// </summary>
-    public class ResultClass
-    {
-        /// <summary>
-        /// 代码
-        /// </summary>
-        public int code { get; set; }
 
         /// <summary>
-        /// 信息
+        /// 查询从分类列表    v1
         /// </summary>
-        public string msg { get; set; }
-
-        // <summary>
-        /// 是否成功
-        /// </summary>
-        public bool success { get; set; }
-
-        public object data { get; set; }
-
-        public ResultClass(bool result, object data, string msg = "")
+        /// <returns></returns>
+        [HttpPost("QueryFromClass")]
+        public JsonResult QueryFromClass(string ParentID)
         {
-            this.code = result ? 200 : 500;
-            this.success = result;
-            this.msg = result ? "操作成功!" : "操作失败!";
-            if (!string.IsNullOrWhiteSpace(msg))
+            if (!string.IsNullOrWhiteSpace(ParentID))
             {
-                this.msg = msg;
+                data = classBLL.QueryFromClass(ParentID);
             }
-            this.data = data;
+            return Json(new ResultClass(true, data));
+        }
+
+        /// <summary>
+        /// 新增从分类    v1
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost("AddFromClass")]
+        public JsonResult AddFromClass(string ValueName, string ParentID)
+        {
+            if (!string.IsNullOrWhiteSpace(ValueName) && !string.IsNullOrWhiteSpace(ParentID))
+            {
+                result = classBLL.AddFromClass(ValueName, ParentID, out msg);
+            }
+            return Json(new ResultClass(result, null, msg));
+        }
+
+        /// <summary>
+        /// 修改从分类    v1
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost("UpdateFromClass")]
+        public JsonResult UpdateFromClass(FromClassModel model)
+        {
+            if (model != null)
+            {
+                result = classBLL.UpdateFromClass(model, out msg);
+            }
+            return Json(new ResultClass(result, null, msg));
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 namespace OverHeadRecord.Model.V1
 {
     /// <summary>
-    /// 次级分类Model
+    /// 次分类Model
     /// </summary>
     public class SubClassModel
     {
@@ -21,14 +21,6 @@ namespace OverHeadRecord.Model.V1
         /// </summary>
         public string ParentID { get; set; }
 
-
-        /// <summary>
-        /// 主分类名称编号ID
-        /// </summary>
-        [SugarColumn(IsIgnore = true)]
-        public string MainValueName { get; set; }
-
-
         /// <summary>
         /// 值名称
         /// </summary>
@@ -38,5 +30,11 @@ namespace OverHeadRecord.Model.V1
         /// 状态 1-使用中 2-停用 3-删除
         /// </summary>
         public int State { get; set; }
+
+        /// <summary>
+        /// 主分类名称
+        /// </summary>
+        [SugarColumn(IsIgnore = true)]
+        public string MainValueName { get; set; }
     }
 }
