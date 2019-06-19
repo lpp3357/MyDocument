@@ -66,7 +66,7 @@
         <mu-flex>
           <mu-data-table :columns="columnsSub" :data="listSubTab" :rowStyle="setStyle">
             <template slot-scope="scope">
-              <td style="text-align: center;padding:0">{{scope.row.mainValueName}}</td>
+              <!-- <td style="text-align: center;padding:0">{{scope.row.mainValueName}}</td> -->
               <td style="text-align: center;padding:0">{{scope.row.valueName}}</td>
               <td style="text-align: center;padding:0">{{scope.row.state}}</td>
               <td>
@@ -131,7 +131,7 @@
         <mu-flex>
           <mu-data-table :columns="columnsFrom" :data="listFromTab" :rowStyle="setStyle">
             <template slot-scope="scope">
-              <td style="text-align: center;padding:0">{{scope.row.subValueName}}</td>
+              <!-- <td style="text-align: center;padding:0">{{scope.row.subValueName}}</td> -->
               <td style="text-align: center;padding:0">{{scope.row.valueName}}</td>
               <td style="text-align: center;padding:0">{{scope.row.state}}</td>
               <td>
@@ -172,17 +172,17 @@ export default {
       ],
       columnsSub: [
         // 定义选项卡二的table表头
-        { title: "主分类名称", width: 100 },
-        { title: "次分类名称", width: 100 },
-        { title: "状态", width: 55 },
-        { title: "操作", width: 135 }
+        // { title: "主分类名称", width: 100 },
+        { title: "次分类名称" },
+        { title: "状态", width: 100 },
+        { title: "操作", width: 148 }
       ],
       columnsFrom: [
         // 定义选项卡三的table表头
-        { title: "次分类名称", width: 100 },
-        { title: "从分类名称", width: 100 },
-        { title: "状态", width: 55 },
-        { title: "操作", width: 135 }
+        // { title: "次分类名称", width: 100 },
+        { title: "从分类名称" },
+        { title: "状态", width: 100 },
+        { title: "操作", width: 148 }
       ],
       list: [], //主分类数据集
       listSubTab: [], //次分类数据集
@@ -206,24 +206,34 @@ export default {
           val.state = val.state == 1 ? "使用中" : "停用";
         });
         this.list = r.data;
-        if (this.list.length == 0) return;
-        this.mainClassNumber = this.list[0].numberID;
+        if (this.list.length == 0) {
+          this.mainClassNumber = "";
+          return;
+        } else {
+          this.mainClassNumber = this.list[0].numberID;
+        }
       });
     },
     //加载次分类table
     LoadSubClass() {
+      if (this.mainClassNumber == "") return;
       var para = { ParentID: this.mainClassNumber };
       this.$api.post("Class/QuerySubClass", para, r => {
         r.data.map(val => {
           val.state = val.state == 1 ? "使用中" : "停用";
         });
         this.listSubTab = r.data;
-        if (this.listSubTab.length == 0) return;
-        this.SubClassNumber = this.listSubTab[0].numberID;
+        if (this.listSubTab.length == 0) {
+          this.SubClassNumber = "";
+          return;
+        } else {
+          this.SubClassNumber = this.listSubTab[0].numberID;
+        }
       });
     },
     //加载从分类table
     LoadFromClass() {
+      if (this.SubClassNumber == "") return;
       var para = { ParentID: this.SubClassNumber };
       this.$api.post("Class/QueryFromClass", para, r => {
         r.data.map(val => {

@@ -46,7 +46,7 @@ function apiAxios(method, url, params, success, failure) {
     })
         .then(function (res) {
             if (res.data.success === true) {
-                console.log(res.data);
+               // console.log(res.data);
                 success(res.data)
             } else {
                 failure(res.data.msg)

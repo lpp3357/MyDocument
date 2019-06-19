@@ -18,6 +18,9 @@ import Msg from './api/MsgIndex.js'
 // 将Msg方法绑定到全局
 Vue.prototype.$Msg = Msg
 
+
+import './css/mainapp.css'
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

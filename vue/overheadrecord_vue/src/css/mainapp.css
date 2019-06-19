@@ -1,0 +1,16 @@
+.background{
+    background-color: #eceff1;
+    height: 100%;
+}
+
+.name-styleTxt {
+    font-size: 1.05em;
+    font-weight: 600;
+    width: 40%;
+  }
+.select-style{
+    width: 100%;
+    margin-right: 3%;
+    padding-top: 5%;
+}
+ 
