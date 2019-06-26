@@ -29,13 +29,13 @@
             返回的数据
             </summary>
         </member>
-        <member name="M:OverHeadRecord.API.Controllers.v1.ClassController.QueryMainClass">
+        <member name="M:OverHeadRecord.API.Controllers.v1.ClassController.QueryMainClass(System.String)">
             <summary>
             查询主分类列表   v1
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OverHeadRecord.API.Controllers.v1.ClassController.AddMainClass(System.String)">
+        <member name="M:OverHeadRecord.API.Controllers.v1.ClassController.AddMainClass(System.String,System.String)">
             <summary>
             新增主分类    v1
             </summary>
@@ -47,13 +47,13 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OverHeadRecord.API.Controllers.v1.ClassController.QuerySubClass(System.String)">
+        <member name="M:OverHeadRecord.API.Controllers.v1.ClassController.QuerySubClass(System.String,System.String)">
             <summary>
             查询次分类列表    v1
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OverHeadRecord.API.Controllers.v1.ClassController.AddSubClass(System.String,System.String)">
+        <member name="M:OverHeadRecord.API.Controllers.v1.ClassController.AddSubClass(System.String,System.String,System.String)">
             <summary>
             新增次分类    v1
             </summary>
@@ -65,13 +65,13 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OverHeadRecord.API.Controllers.v1.ClassController.QueryFromClass(System.String)">
+        <member name="M:OverHeadRecord.API.Controllers.v1.ClassController.QueryFromClass(System.String,System.String)">
             <summary>
             查询从分类列表    v1
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OverHeadRecord.API.Controllers.v1.ClassController.AddFromClass(System.String,System.String)">
+        <member name="M:OverHeadRecord.API.Controllers.v1.ClassController.AddFromClass(System.String,System.String,System.String)">
             <summary>
             新增从分类    v1
             </summary>

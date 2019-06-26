@@ -4,67 +4,116 @@
         <name>OverHeadRecord.API</name>
     </assembly>
     <members>
-        <member name="T:OverHeadRecord.API.Controllers.ClassController">
+        <member name="T:OverHeadRecord.API.Controllers.v1.ClassController">
             <summary>
             分类控制器
             </summary>
         </member>
-        <member name="F:OverHeadRecord.API.Controllers.ClassController.classBLL">
+        <member name="F:OverHeadRecord.API.Controllers.v1.ClassController.classBLL">
             <summary>
             分类逻辑处理类
             </summary>
         </member>
-        <member name="M:OverHeadRecord.API.Controllers.ClassController.QueryMainClass">
+        <member name="F:OverHeadRecord.API.Controllers.v1.ClassController.msg">
             <summary>
-            查询主分类列表
+            返回的消息
+            </summary>
+        </member>
+        <member name="F:OverHeadRecord.API.Controllers.v1.ClassController.result">
+            <summary>
+            返回的结果
+            </summary>
+        </member>
+        <member name="F:OverHeadRecord.API.Controllers.v1.ClassController.data">
+            <summary>
+            返回的数据
+            </summary>
+        </member>
+        <member name="M:OverHeadRecord.API.Controllers.v1.ClassController.QueryMainClass(System.String)">
+            <summary>
+            查询主分类列表   v1
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OverHeadRecord.API.Controllers.ClassController.AddMainClass(System.String)">
+        <member name="M:OverHeadRecord.API.Controllers.v1.ClassController.AddMainClass(System.String,System.String)">
             <summary>
-            新增主分类
+            新增主分类    v1
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OverHeadRecord.API.Controllers.ClassController.UpdateMainClass(OverHeadRecord.Model.V1.MainClassModel)">
+        <member name="M:OverHeadRecord.API.Controllers.v1.ClassController.UpdateMainClass(OverHeadRecord.Model.V1.MainClassModel)">
             <summary>
-            修改主分类
+            修改主分类    v1
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OverHeadRecord.API.Controllers.ClassController.QuerySubClass(System.String)">
+        <member name="M:OverHeadRecord.API.Controllers.v1.ClassController.QuerySubClass(System.String,System.String)">
             <summary>
-            查询次分类列表
+            查询次分类列表    v1
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OverHeadRecord.API.Controllers.ClassController.AddSubClass(System.String,System.String)">
+        <member name="M:OverHeadRecord.API.Controllers.v1.ClassController.AddSubClass(System.String,System.String,System.String)">
             <summary>
-            新增次分类
+            新增次分类    v1
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OverHeadRecord.API.Controllers.ClassController.UpdateSubClass(OverHeadRecord.Model.V1.SubClassModel)">
+        <member name="M:OverHeadRecord.API.Controllers.v1.ClassController.UpdateSubClass(OverHeadRecord.Model.V1.SubClassModel)">
             <summary>
-            修改次分类
+            修改次分类    v1
             </summary>
             <returns></returns>
         </member>
-        <member name="T:OverHeadRecord.API.Controllers.ResultClass">
+        <member name="M:OverHeadRecord.API.Controllers.v1.ClassController.QueryFromClass(System.String,System.String)">
             <summary>
-            返回结果
+            查询从分类列表    v1
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OverHeadRecord.API.Controllers.v1.ClassController.AddFromClass(System.String,System.String,System.String)">
+            <summary>
+            新增从分类    v1
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OverHeadRecord.API.Controllers.v1.ClassController.UpdateFromClass(OverHeadRecord.Model.V1.FromClassModel)">
+            <summary>
+            修改从分类    v1
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:OverHeadRecord.API.Controllers.v1.OverHeadController">
+            <summary>
+            开销控制器
             </summary>
         </member>
-        <member name="P:OverHeadRecord.API.Controllers.ResultClass.code">
+        <member name="F:OverHeadRecord.API.Controllers.v1.OverHeadController.overHeadBLL">
             <summary>
-            代码
+            开销逻辑处理类
             </summary>
         </member>
-        <member name="P:OverHeadRecord.API.Controllers.ResultClass.msg">
+        <member name="F:OverHeadRecord.API.Controllers.v1.OverHeadController.msg">
             <summary>
-            信息
+            返回的消息
             </summary>
         </member>
-        <!-- 对于成员“P:OverHeadRecord.API.Controllers.ResultClass.success”忽略有格式错误的 XML 注释 -->
+        <member name="F:OverHeadRecord.API.Controllers.v1.OverHeadController.data">
+            <summary>
+            返回的数据
+            </summary>
+        </member>
+        <member name="M:OverHeadRecord.API.Controllers.v1.OverHeadController.AddOverHead(OverHeadRecord.Model.V1.OverHeadModel)">
+            <summary>
+            添加开销    v1
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OverHeadRecord.API.Controllers.v1.OverHeadController.QueryOverHead(System.String)">
+            <summary>
+            查询开销列表   v1
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>

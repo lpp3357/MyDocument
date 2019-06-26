@@ -37,7 +37,7 @@ namespace OverHeadRecord.DAO.V1
         public bool UpdateSubClass(SubClassModel model, out string msg)
         {
             msg = string.Empty;
-            var MainData = Db.Queryable<SubClassModel>().Where(m => m.State < 3 && m.ValueName == model.ValueName && m.NumberID != model.NumberID && m.ParentID == model.ParentID).ToList();
+            var MainData = Db.Queryable<SubClassModel>().Where(m => m.State < 3 && m.ValueName == model.ValueName && m.NumberID != model.NumberID && m.ParentID == model.ParentID && m.UserID == model.UserID).ToList();
             if (MainData.Count > 0 && model.State < 3)
             {
                 msg = $"次分类名称：{model.ValueName} 已存在!";
@@ -52,14 +52,14 @@ namespace OverHeadRecord.DAO.V1
         /// 查询次级分类
         /// </summary>
         /// <returns></returns>
-        public DataTable QuerytSubClass(string ParentID)
+        public DataTable QuerytSubClass(string ParentID, string userid)
         {
             var SubData = Db.Queryable<SubClassModel, MainClassModel>((sub, main) => new object[] {
                 JoinType.Left,sub.ParentID==main.NumberID
             }).
             //Select((sub, main) => new { NumberID = sub.NumberID, ValueName = sub.ValueName, ParentID = sub.ParentID, State = sub.State })
-            Select((sub, main) => new { sub.NumberID, sub.ValueName, sub.ParentID, MainValueName = main.ValueName, sub.State })
-            .Where(sub => sub.State < 3 && sub.ParentID == ParentID).ToDataTable();
+            Select((sub, main) => new { sub.NumberID, sub.ValueName, sub.ParentID, MainValueName = main.ValueName, sub.State, sub.UserID })
+            .Where(sub => sub.State < 3 && sub.ParentID == ParentID && sub.UserID == userid).ToDataTable();
             return SubData;
         }
     }

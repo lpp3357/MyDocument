@@ -41,9 +41,9 @@ namespace OverHeadRecord.API.Controllers.v1
         /// </summary>
         /// <returns></returns>
         [HttpPost("QueryMainClass")]
-        public JsonResult QueryMainClass()
+        public JsonResult QueryMainClass(string userid)
         {
-            data = classBLL.SelectMainClass();
+            data = classBLL.SelectMainClass(userid);
             return Json(new ResultClass(true, data));
         }
 
@@ -52,11 +52,11 @@ namespace OverHeadRecord.API.Controllers.v1
         /// </summary>
         /// <returns></returns>
         [HttpPost("AddMainClass")]
-        public JsonResult AddMainClass(string ValueName)
+        public JsonResult AddMainClass(string ValueName, string userid)
         {
-            if (!string.IsNullOrWhiteSpace(ValueName))
+            if (!string.IsNullOrWhiteSpace(ValueName) && !string.IsNullOrWhiteSpace(userid))
             {
-                result = classBLL.AddMainClass(ValueName, out msg);
+                result = classBLL.AddMainClass(ValueName, userid, out msg);
             }
             return Json(new ResultClass(result, null, msg));
         }
@@ -81,11 +81,11 @@ namespace OverHeadRecord.API.Controllers.v1
         /// </summary>
         /// <returns></returns>
         [HttpPost("QuerySubClass")]
-        public JsonResult QuerySubClass(string ParentID)
+        public JsonResult QuerySubClass(string ParentID, string userid)
         {
             if (!string.IsNullOrWhiteSpace(ParentID))
             {
-                data = classBLL.QuerySubClass(ParentID);
+                data = classBLL.QuerySubClass(ParentID, userid);
             }
             return Json(new ResultClass(true, data));
         }
@@ -95,11 +95,11 @@ namespace OverHeadRecord.API.Controllers.v1
         /// </summary>
         /// <returns></returns>
         [HttpPost("AddSubClass")]
-        public JsonResult AddSubClass(string ValueName, string ParentID)
+        public JsonResult AddSubClass(string ValueName, string ParentID, string userid)
         {
-            if (!string.IsNullOrWhiteSpace(ValueName) && !string.IsNullOrWhiteSpace(ParentID))
+            if (!string.IsNullOrWhiteSpace(ValueName) && !string.IsNullOrWhiteSpace(ParentID) && !string.IsNullOrWhiteSpace(userid))
             {
-                result = classBLL.AddSubClass(ValueName, ParentID, out msg);
+                result = classBLL.AddSubClass(ValueName, ParentID, userid, out msg);
             }
             return Json(new ResultClass(result, null, msg));
         }
@@ -124,11 +124,11 @@ namespace OverHeadRecord.API.Controllers.v1
         /// </summary>
         /// <returns></returns>
         [HttpPost("QueryFromClass")]
-        public JsonResult QueryFromClass(string ParentID)
+        public JsonResult QueryFromClass(string ParentID, string userid)
         {
             if (!string.IsNullOrWhiteSpace(ParentID))
             {
-                data = classBLL.QueryFromClass(ParentID);
+                data = classBLL.QueryFromClass(ParentID, userid);
             }
             return Json(new ResultClass(true, data));
         }
@@ -138,11 +138,11 @@ namespace OverHeadRecord.API.Controllers.v1
         /// </summary>
         /// <returns></returns>
         [HttpPost("AddFromClass")]
-        public JsonResult AddFromClass(string ValueName, string ParentID)
+        public JsonResult AddFromClass(string ValueName, string ParentID, string userid)
         {
-            if (!string.IsNullOrWhiteSpace(ValueName) && !string.IsNullOrWhiteSpace(ParentID))
+            if (!string.IsNullOrWhiteSpace(ValueName) && !string.IsNullOrWhiteSpace(ParentID) && !string.IsNullOrWhiteSpace(userid))
             {
-                result = classBLL.AddFromClass(ValueName, ParentID, out msg);
+                result = classBLL.AddFromClass(ValueName, ParentID, userid, out msg);
             }
             return Json(new ResultClass(result, null, msg));
         }

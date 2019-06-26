@@ -37,5 +37,10 @@ namespace OverHeadRecord.Model.V1
         [SugarColumn(IsIgnore = true)]
         public string SubValueName { get; set; }
 
+        /// <summary>
+        /// 用户编号
+        /// </summary>
+        public string UserID { get; set; }
+
     }
 }

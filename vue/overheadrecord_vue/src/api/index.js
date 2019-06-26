@@ -1,5 +1,10 @@
+import Vue from 'vue'
+import MyIndex from '../myjs/index'
+import Msg from '../api/MsgIndex'
+
 // 配置API接口地址
 var root = 'http://www.penglin.xyz:8002/api/'
+
 // 引用axios
 var axios = require('axios')
 // 自定义判断元素类型JS
@@ -33,9 +38,16 @@ function filterNull(o) {
 */
 
 function apiAxios(method, url, params, success, failure) {
-    if (params) {
-        params = filterNull(params)
+    if (MyIndex.MyToken == null || MyIndex.MyToken == "" || MyIndex.MyToken == "null") {
+        Msg.TipAlert("缺少用户信息!");
+        return;
     }
+    if (!params) {
+        params = { userid: MyIndex.MyToken }
+    } else {
+        Vue.set(params, 'userid', MyIndex.MyToken)
+    }
+    params = filterNull(params)
     axios({
         method: method,
         url: url,
@@ -46,7 +58,7 @@ function apiAxios(method, url, params, success, failure) {
     })
         .then(function (res) {
             if (res.data.success === true) {
-               // console.log(res.data);
+                // console.log(res.data);
                 success(res.data)
             } else {
                 failure(res.data.msg)

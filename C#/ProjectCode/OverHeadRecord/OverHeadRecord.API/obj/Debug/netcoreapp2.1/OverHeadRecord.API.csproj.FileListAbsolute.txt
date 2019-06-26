@@ -43,3 +43,4 @@ F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\bin\Debug\netco
 F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\obj\Debug\netcoreapp2.1\OverHeadRecord.API.csprojAssemblyReference.cache
 F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\obj\Debug\netcoreapp2.1\OverHeadRecord.API.csproj.CopyComplete
 F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\bin\Debug\netcoreapp2.1\OverHeadRecord.API.Views.dll
+E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.API\bin\Debug\netcoreapp2.1\OverHeadRecord.API.Views.dll

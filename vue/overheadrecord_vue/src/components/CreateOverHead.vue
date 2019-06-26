@@ -1,7 +1,7 @@
 <template>
   <div class="background">
     <mu-appbar style="width: 100%;" title="创建开销" color="#03a9f4"></mu-appbar>
-    <mu-flex align-self="center">
+    <mu-flex align-self="center" class="flex-selectstyle">
       <mu-flex justify-content="center" align-self="center" class="name-styleTxt">主分类名称：</mu-flex>
       <mu-flex justify-content="center" align-self="center" class="select-style">
         <mu-select align-self="center" style="width:100%" v-model="mainClassNumber">
@@ -14,7 +14,7 @@
         </mu-select>
       </mu-flex>
     </mu-flex>
-    <mu-flex align-self="center">
+    <mu-flex align-self="center" class="flex-selectstyle">
       <mu-flex justify-content="center" align-self="center" class="name-styleTxt">次分类名称：</mu-flex>
       <mu-flex justify-content="center" align-self="center" class="select-style">
         <mu-select align-self="center" style="width:100%" v-model="subClassNumber">
@@ -27,7 +27,7 @@
         </mu-select>
       </mu-flex>
     </mu-flex>
-    <mu-flex align-self="center">
+    <mu-flex align-self="center" class="flex-selectstyle">
       <mu-flex justify-content="center" align-self="center" class="name-styleTxt">从分类名称：</mu-flex>
       <mu-flex justify-content="center" align-self="center" class="select-style">
         <mu-select align-self="center" style="width:100%" v-model="fromClassNumber">
@@ -40,31 +40,51 @@
         </mu-select>
       </mu-flex>
     </mu-flex>
-    <mu-flex align-self="center">
-      <mu-flex justify-content="center" align-self="center" class="name-styleTxt">日期与时间：</mu-flex>
-      <mu-row gutter class="select-style">
-        <mu-col span="12" lg="4" sm="6">
-          <mu-date-input v-model="value11" type="dateTime" label-float full-width landscape></mu-date-input>
-        </mu-col>
+    <mu-flex align-self="center" class="flex-selectstyle">
+      <mu-flex justify-content="center" align-self="center" class="name-styleTxt">日期时间：</mu-flex>
+      <mu-row gutter class="inputrow-style">
+        <mu-date-input v-model="overDate" type="dateTime" label-float full-width landscape></mu-date-input>
       </mu-row>
+    </mu-flex>
+    <mu-flex align-self="center" class="flex-selectstyle">
+      <mu-flex justify-content="center" align-self="center" class="name-styleTxt">数值：</mu-flex>
+      <mu-row gutter class="inputrow-style">
+        <mu-text-field fill="true" v-model="dataNumber" style="width:100%"></mu-text-field>
+      </mu-row>
+    </mu-flex>
+    <mu-flex align-self="center" class="select-selectstyle">
+      <mu-flex justify-content="center" align-self="center" class="name-styleTxt">备注：</mu-flex>
+      <mu-row gutter class="inputrow-style">
+        <mu-text-field fill="true" v-model="Notes" style="width:100%"></mu-text-field>
+      </mu-row>
+    </mu-flex>
+    <mu-flex align-self="center">
+      <button type="button" class="btn-style" @click="AddOverHead">添加</button>
+    </mu-flex>
+    <mu-flex align-self="center" style="margin-top:10px">
+      <button type="button" class="btn-style" @click="ToCreateClass">创建分类</button>
     </mu-flex>
   </div>
 </template>
 <script>
 export default {
   created() {
+    //获取用户信息
+    this.$MyIndex.getUserInfo();
     //绑定主分类列表
     this.LoadMainClass();
   },
   data() {
     return {
-      value11: "",
+      overDate: new Date(),
       listMain: [],
       listSub: [],
       listFrom: [],
       mainClassNumber: "",
       subClassNumber: "",
-      fromClassNumber: ""
+      fromClassNumber: "",
+      dataNumber: "",
+      Notes: ""
     };
   },
   methods: {
@@ -113,6 +133,35 @@ export default {
           this.fromClassNumber = this.listFrom[0].numberID;
         }
       });
+    },
+    //添加开销
+    AddOverHead() {
+      var para = {
+        userID: "001",
+        mainClassID: this.mainClassNumber,
+        subClassID: this.subClassNumber,
+        fromClassID: this.fromClassNumber,
+        dataNumber: this.dataNumber,
+        useTime: this.overDate,
+        note: this.Notes
+      };
+      this.$api.post(
+        "OverHead/AddOverHead",
+        para,
+        r => {
+          this.LoadMainClass();
+          this.overDate = "";
+          this.dataNumber = "";
+          this.Notes = "";
+          this.$Msg.TipAlert(r.msg);
+        },
+        m => {
+          this.$Msg.TipAlert(m);
+        }
+      );
+    },
+    ToCreateClass() {
+      this.$router.push({ path: "/CreateClass?use=" + this.$MyIndex.MyToken });
     }
   },
   watch: {

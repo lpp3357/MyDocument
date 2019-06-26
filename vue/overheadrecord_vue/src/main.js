@@ -18,8 +18,13 @@ import Msg from './api/MsgIndex.js'
 // 将Msg方法绑定到全局
 Vue.prototype.$Msg = Msg
 
-
+//引用自定义的css
 import './css/mainapp.css'
+
+//引用自定义的index.js
+import MyIndex from './myjs/index.js'
+//绑定到全局
+Vue.prototype.$MyIndex = MyIndex
 
 Vue.config.productionTip = false
 

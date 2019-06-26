@@ -14,5 +14,4 @@ F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\bin\Debug\net
 F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\obj\Debug\netcoreapp2.1\OverHeadRecord.Model.csproj.CoreCompileInputs.cache
 F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\obj\Debug\netcoreapp2.1\OverHeadRecord.Model.AssemblyInfoInputs.cache
 F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\obj\Debug\netcoreapp2.1\OverHeadRecord.Model.AssemblyInfo.cs
-E:\MyDocument\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\obj\Debug\netcoreapp2.1\OverHeadRecord.Model.csprojAssemblyReference.cache
 F:\我的文档\C#\ProjectCode\OverHeadRecord\OverHeadRecord.Model\obj\Debug\netcoreapp2.1\OverHeadRecord.Model.csprojAssemblyReference.cache

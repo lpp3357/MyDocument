@@ -25,5 +25,10 @@ namespace OverHeadRecord.Model.V1
         /// 状态 1-使用中 2-停用 3-删除
         /// </summary>
         public int State { get; set; }
+
+        /// <summary>
+        /// 用户编号
+        /// </summary>
+        public string UserID { get; set; }
     }
 }

@@ -39,7 +39,7 @@ namespace OverHeadRecord.Model.V1
         /// <summary>
         /// 数据数量
         /// </summary>
-        public string DataNumber { get; set; }
+        public decimal DataNumber { get; set; }
 
         /// <summary>
         /// 使用时间

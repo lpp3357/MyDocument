@@ -13,4 +13,83 @@
     margin-right: 3%;
     padding-top: 5%;
 }
+
+
+.btn-style {
+    min-width: 100%;
+    min-height: 38px;
+    background-color: #2196f3;
+    border: none;
+    border-radius: 4px;
+    -webkit-border-radius: 4px；;
+}
+
+.back-style{
+     width: 20px;
+    background-color: #f196f3;
+}
+
+.flex-selectstyle{
+    height: 60px;
+    width: 100%;
+}
+.inputrow-style{
+    width:100%;
+    padding-right:5%
+}
+
+.cc-table{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cc-select-style{
+    width:50%;
+    margin-bottom: -5%;
+    margin-right: 1%;
+}
  
+.cc-name-one {
+    font-size: 1.05em;
+    font-weight: 600;
+    margin-top: 3%;
+    margin-right: 1%;
+    width: 30%;
+}
+
+
+.cc-name-two {
+    font-size: 1.05em;
+    font-weight: 600;
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-top: -1.5%;
+    width: 30%;
+}
+
+.cc-input{
+    width: 50%;
+    margin-right: 1%;
+}
+
+.cc-btn-style {
+    margin: 10px; 
+    width: 15%;
+    min-height: 28px; 
+    background-color: #2196f3; 
+    border: none; 
+    border-radius: 4px;
+    -webkit-border-radius: 4px；
+}

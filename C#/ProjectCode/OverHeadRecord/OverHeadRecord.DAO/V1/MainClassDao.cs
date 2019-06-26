@@ -53,9 +53,9 @@ namespace OverHeadRecord.DAO.V1
         /// 查询主分类
         /// </summary>
         /// <returns></returns>
-        public DataTable SelectMainClass()
+        public DataTable SelectMainClass(string userid)
         {
-            var MainData = Db.Queryable<MainClassModel>().Where(m => m.State < 3).ToDataTable();
+            var MainData = Db.Queryable<MainClassModel>().Where(m => m.State < 3 && m.UserID == userid).ToDataTable();
             return MainData;
         }
 

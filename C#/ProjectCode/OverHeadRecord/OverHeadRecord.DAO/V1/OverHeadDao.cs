@@ -32,12 +32,12 @@ namespace OverHeadRecord.DAO.V1
         public DataTable QueryOverHead(string OverDate)
         {
             DateTime Date = Convert.ToDateTime(OverDate);
-            var OverData = Db.Queryable<OverHeadModel, MainClassModel, SubClassModel, FromClassModel>((over, main, sub, from) => new object[] {
-                JoinType.Left,over.MainClassID == main.NumberID,
-                JoinType.Left,over.SubClassID == sub.NumberID,
-                JoinType.Left,over.FromClassID == sub.NumberID
-            }).Where(over => over.UseTime == Date)
-              .Select((over, main, sub, from) => new { over.NumberID, MainValueName = main.ValueName, SubValueName = sub.ValueName, FromValueName = from.ValueName, over.DataNumber, over.UseTime, over.Note }).ToDataTable();
+            var OverData = Db.Queryable<OverHeadModel, MainClassModel, SubClassModel, FromClassModel>((ov, main, sub, fm) => new object[] {
+                JoinType.Left,ov.MainClassID == main.NumberID,
+                JoinType.Left,ov.SubClassID == sub.NumberID,
+                JoinType.Left,ov.FromClassID == fm.NumberID
+            }).Where(ov => ov.UseTime.Date == Date.Date)
+              .Select((ov, main, sub, fm) => new { ov.NumberID, MainValueName = main.ValueName, SubValueName = sub.ValueName, FromValueName = fm.ValueName, ov.DataNumber, ov.UseTime, ov.Note }).ToDataTable();
             return OverData;
         }
     }

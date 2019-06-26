@@ -2,9 +2,13 @@
   <div>
     <!-- https://muse-ui.org/#/zh-CN/layout -->
     <!-- <h3>创建分类</h3> -->
-    <mu-appbar style="width: 100%;" title="创建分类" color="#90caf9"></mu-appbar>
-    <mu-container style="padding:0px">
-      <mu-tabs :value.sync="active" indicator-color="yellow" center full-width>
+    <mu-appbar style="width: 100%;padding:0" title="创建分类" color="#90caf9">
+      <mu-button icon slot="left" @click="backClick()">
+        <mu-icon value="<" color:red></mu-icon>
+      </mu-button>
+    </mu-appbar>
+    <mu-container style="padding:0px;max-width:100%">
+      <mu-tabs :value.sync="active" indicator-color="yellow" center full-width class="cc-table">
         <mu-tab>创建主分类</mu-tab>
         <mu-tab>创建次分类</mu-tab>
         <mu-tab>创建从分类</mu-tab>
@@ -12,12 +16,12 @@
       <!-- 主分类选项卡 -->
       <div v-if="active === 0">
         <mu-flex align-self="center">
-          <mu-flex justify-content="center" align-self="center" class="name-style">主分类名称：</mu-flex>
-          <mu-text-field fill="true" v-model="mainClassValue"></mu-text-field>
-          <button type="button" class="btn-style" @click="AddMainClass">添加</button>
+          <mu-flex class="cc-name-one" align-self="center" style="margin-top:-1.5%">主分类名称：</mu-flex>
+          <mu-text-field class="cc-input" v-model="mainClassValue"></mu-text-field>
+          <button type="button" class="cc-btn-style" @click="AddMainClass">添加</button>
         </mu-flex>
         <mu-flex>
-          <mu-data-table :columns="columns" :data="list" :rowStyle="setStyle">
+          <mu-data-table :columns="columns" :data="list" :rowStyle="setStyle" class="cc-table">
             <template slot-scope="scope">
               <td>{{scope.row.valueName}}</td>
               <td>{{scope.row.state}}</td>
@@ -41,30 +45,20 @@
       </div>
       <!-- 次分类选项卡 -->
       <div v-if="active === 1">
-        <mu-flex align-self="center">
-          <mu-flex justify-content="center" align-self="center" class="name-styleSub">主分类名称：</mu-flex>
-          <mu-flex justify-content="center" align-self="center">
-            <mu-select
-              align-self="center"
-              style="margin-bottom:-20px;width:205px"
-              v-model="mainClassNumber"
-            >
-              <mu-option
-                v-for="opt in list"
-                :key="opt.numberID"
-                :label="opt.valueName"
-                :value="opt.numberID"
-              ></mu-option>
-            </mu-select>
-          </mu-flex>
+        <mu-flex align-self="center" style="width:100%">
+          <mu-flex class="cc-name-one" justify-content="center">主分类名称：</mu-flex>
+          <mu-select class="cc-select-style" v-model="mainClassNumber">
+            <mu-option v-for="o in list" :key="o.numberID" :label="o.valueName" :value="o.numberID"></mu-option>
+          </mu-select>
+          <mu-flex style="width:20%"></mu-flex>
         </mu-flex>
-        <mu-flex align-self="center">
-          <mu-flex justify-content="center" align-self="center" class="name-style">次分类名称：</mu-flex>
-          <mu-text-field fill="true" v-model="SubClassValue"></mu-text-field>
-          <button type="button" class="btn-style" @click="AddSubClass">添加</button>
+        <mu-flex align-self="center" style="width:100%">
+          <mu-flex justify-content="center" align-self="center" class="cc-name-two">次分类名称：</mu-flex>
+          <mu-text-field class="cc-input" v-model="SubClassValue"></mu-text-field>
+          <button type="button" class="cc-btn-style" @click="AddSubClass">添加</button>
         </mu-flex>
         <mu-flex>
-          <mu-data-table :columns="columnsSub" :data="listSubTab" :rowStyle="setStyle">
+          <mu-data-table :columns="columnsSub" :data="SubT" :rowStyle="setStyle" class="cc-table">
             <template slot-scope="scope">
               <!-- <td style="text-align: center;padding:0">{{scope.row.mainValueName}}</td> -->
               <td style="text-align: center;padding:0">{{scope.row.valueName}}</td>
@@ -89,47 +83,27 @@
       </div>
       <!-- 从分类选项卡 -->
       <div v-if="active === 2">
-        <mu-flex align-self="center">
-          <mu-flex justify-content="center" align-self="center" class="name-styleSub">主分类名称：</mu-flex>
-          <mu-flex justify-content="center" align-self="center">
-            <mu-select
-              align-self="center"
-              style="margin-bottom:-20px;width:205px"
-              v-model="mainClassNumber"
-            >
-              <mu-option
-                v-for="opt in list"
-                :key="opt.numberID"
-                :label="opt.valueName"
-                :value="opt.numberID"
-              ></mu-option>
-            </mu-select>
-          </mu-flex>
+        <mu-flex align-self="center" style="width:100%">
+          <mu-flex class="cc-name-one" justify-content="center">主分类名称：</mu-flex>
+          <mu-select class="cc-select-style" v-model="mainClassNumber">
+            <mu-option v-for="o in list" :key="o.numberID" :label="o.valueName" :value="o.numberID"></mu-option>
+          </mu-select>
+          <mu-flex style="width:20%"></mu-flex>
         </mu-flex>
         <mu-flex align-self="center">
-          <mu-flex justify-content="center" align-self="center" class="name-styleSub">次分类名称：</mu-flex>
-          <mu-flex justify-content="center" align-self="center">
-            <mu-select
-              align-self="center"
-              style="margin-bottom:-20px;width:205px"
-              v-model="SubClassNumber"
-            >
-              <mu-option
-                v-for="opt in listSubTab"
-                :key="opt.numberID"
-                :label="opt.valueName"
-                :value="opt.numberID"
-              ></mu-option>
-            </mu-select>
-          </mu-flex>
+          <mu-flex class="cc-name-one" justify-content="center">次分类名称：</mu-flex>
+          <mu-select class="cc-select-style" v-model="SubClassNumber">
+            <mu-option v-for="o in SubT" :key="o.numberID" :label="o.valueName" :value="o.numberID"></mu-option>
+          </mu-select>
+          <mu-flex style="width:20%"></mu-flex>
         </mu-flex>
         <mu-flex align-self="center">
-          <mu-flex justify-content="center" align-self="center" class="name-style">从分类名称：</mu-flex>
-          <mu-text-field fill="true" v-model="FromClassValue"></mu-text-field>
-          <button type="button" class="btn-style" @click="AddFromClass">添加</button>
+          <mu-flex class="cc-name-one" justify-content="center">从分类名称：</mu-flex>
+          <mu-text-field class="cc-input" v-model="FromClassValue"></mu-text-field>
+          <button type="button" class="cc-btn-style" @click="AddFromClass">添加</button>
         </mu-flex>
         <mu-flex>
-          <mu-data-table :columns="columnsFrom" :data="listFromTab" :rowStyle="setStyle">
+          <mu-data-table :columns="columnsFrom" :data="FroT" :rowStyle="setStyle" class="cc-table">
             <template slot-scope="scope">
               <!-- <td style="text-align: center;padding:0">{{scope.row.subValueName}}</td> -->
               <td style="text-align: center;padding:0">{{scope.row.valueName}}</td>
@@ -158,12 +132,14 @@
 <script>
 export default {
   created() {
+    //获取用户信息
+    this.$MyIndex.getUserInfo();
     //绑定主分类列表
     this.LoadMainClass();
   },
   data() {
     return {
-      active: 2,
+      active: 0,
       columns: [
         // 定义选项卡一的table表头
         { title: "主分类名称" },
@@ -185,8 +161,8 @@ export default {
         { title: "操作", width: 148 }
       ],
       list: [], //主分类数据集
-      listSubTab: [], //次分类数据集
-      listFromTab: [], //从分类数据集
+      SubT: [], //次分类数据集
+      FroT: [], //从分类数据集
       mainClassValue: "", //主分类名称
       mainClassNumber: "", //主分类编号
       SubClassValue: "", //次分类名称
@@ -222,12 +198,12 @@ export default {
         r.data.map(val => {
           val.state = val.state == 1 ? "使用中" : "停用";
         });
-        this.listSubTab = r.data;
-        if (this.listSubTab.length == 0) {
+        this.SubT = r.data;
+        if (this.SubT.length == 0) {
           this.SubClassNumber = "";
           return;
         } else {
-          this.SubClassNumber = this.listSubTab[0].numberID;
+          this.SubClassNumber = this.SubT[0].numberID;
         }
       });
     },
@@ -239,7 +215,7 @@ export default {
         r.data.map(val => {
           val.state = val.state == 1 ? "使用中" : "停用";
         });
-        this.listFromTab = r.data;
+        this.FroT = r.data;
       });
     },
     //添加主分类
@@ -368,6 +344,9 @@ export default {
           this.$Msg.TipAlert(m);
         }
       );
+    },
+    backClick() {
+      this.$router.push({ path: "/?use=" + this.$MyIndex.MyToken });
     }
   },
   watch: {
@@ -387,29 +366,6 @@ export default {
 };
 </script>
 <style scoped>
-.name-style {
-  font-size: 1.05em;
-  font-weight: 600;
-  margin-top: -5%;
-  margin-right: 1%;
-  width: 120px;
-}
-.name-styleSub {
-  font-size: 1.05em;
-  font-weight: 600;
-  margin-top: 3%;
-  margin-right: 1.4%;
-  width: 90px;
-}
-.btn-style {
-  margin: 10px;
-  min-width: 60px;
-  min-height: 28px;
-  background-color: #2196f3;
-  border: none;
-  border-radius: 4px;
-  -webkit-border-radius: 4px；;
-}
 .span-edit {
   background-color: #00e676;
   border: none;

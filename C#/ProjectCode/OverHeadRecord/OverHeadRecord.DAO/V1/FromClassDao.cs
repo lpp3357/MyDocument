@@ -40,7 +40,7 @@ namespace OverHeadRecord.DAO.V1
         public bool UpdateFromClass(FromClassModel model, out string msg)
         {
             msg = string.Empty;
-            var MainData = Db.Queryable<FromClassModel>().Where(m => m.State < 3 && m.ValueName == model.ValueName && m.NumberID != model.NumberID && m.ParentID == model.ParentID).ToList();
+            var MainData = Db.Queryable<FromClassModel>().Where(m => m.State < 3 && m.ValueName == model.ValueName && m.NumberID != model.NumberID && m.ParentID == model.ParentID && m.UserID == model.UserID).ToList();
             if (MainData.Count > 0 && model.State < 3)
             {
                 msg = $"从分类名称：{model.ValueName} 已存在!";
@@ -55,13 +55,13 @@ namespace OverHeadRecord.DAO.V1
         /// 查询从分类
         /// </summary>
         /// <returns></returns>
-        public DataTable QueryFromClass(string ParentID)
+        public DataTable QueryFromClass(string ParentID, string userid)
         {
             var SubData = Db.Queryable<FromClassModel, SubClassModel>((frta, sub) => new object[] {
                 JoinType.Left,frta.ParentID==sub.NumberID
             }).
-            Select((frta, sub) => new { frta.NumberID, frta.ValueName, frta.ParentID, SubValueName = sub.ValueName, frta.State })
-            .Where(frta => frta.State < 3 && frta.ParentID == ParentID).ToDataTable();
+            Select((frta, sub) => new { frta.NumberID, frta.ValueName, frta.ParentID, SubValueName = sub.ValueName, frta.State, frta.UserID })
+            .Where(frta => frta.State < 3 && frta.ParentID == ParentID && frta.UserID == userid).ToDataTable();
             return SubData;
         }
     }
