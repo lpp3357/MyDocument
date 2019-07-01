@@ -31,13 +31,14 @@ namespace OverHeadRecord.DAO.V1
         /// <returns></returns>
         public DataTable QueryOverHead(string OverDate)
         {
+            if (DateTime.TryParse(OverDate)) return null;
             DateTime Date = Convert.ToDateTime(OverDate);
             var OverData = Db.Queryable<OverHeadModel, MainClassModel, SubClassModel, FromClassModel>((ov, main, sub, fm) => new object[] {
                 JoinType.Left,ov.MainClassID == main.NumberID,
                 JoinType.Left,ov.SubClassID == sub.NumberID,
                 JoinType.Left,ov.FromClassID == fm.NumberID
             }).Where(ov => ov.UseTime.Date == Date.Date)
-              .Select((ov, main, sub, fm) => new { ov.NumberID, MainValueName = main.ValueName, SubValueName = sub.ValueName, FromValueName = fm.ValueName, ov.DataNumber, ov.UseTime, ov.Note }).ToDataTable();
+              .Select((ov, main, sub, fm) => new { ov.NumberID, MainValueName = main.ValueName, SubValueName = sub.ValueName, FromValueName = fm.ValueName, ov.DataNumber, UseTime = ov.UseTime.Date, ov.Note }).OrderBy(ov => ov.UseTime, OrderByType.Desc).ToDataTable();
             return OverData;
         }
     }
