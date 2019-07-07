@@ -79,7 +79,7 @@ namespace OverHeadRecord.BLL.Utils
         {
             if (table == null)
             {
-                return null;
+                return new List<T>();
             }
             List<DataRow> rows = new List<DataRow>();
             foreach (DataRow row in table.Rows)

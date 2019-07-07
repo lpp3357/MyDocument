@@ -345,6 +345,7 @@ export default {
         }
       );
     },
+    //前往首页
     backClick() {
       this.$router.push({ path: "/?use=" + this.$MyIndex.MyToken });
     }
@@ -352,13 +353,13 @@ export default {
   watch: {
     mainClassNumber(number, oldNumber) {
       this.mainClassNumber = number;
-      console.log("主分类编号：", number);
+      //console.log("主分类编号：", number);
       //绑定次分类列表   主分类变更时更新次分类
       this.LoadSubClass();
     },
     SubClassNumber(number, oldNumber) {
       this.SubClassNumber = number;
-      console.log("次分类编号：", number);
+      //console.log("次分类编号：", number);
       //绑定次分类列表   次分类变更时更新从分类
       this.LoadFromClass();
     }

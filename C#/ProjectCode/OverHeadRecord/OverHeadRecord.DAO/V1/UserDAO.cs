@@ -16,9 +16,9 @@ namespace OverHeadRecord.DAO.V1
         /// 查询从分类
         /// </summary>
         /// <returns></returns>
-        public DataTable QueryFromClass(string userid)
+        public DataTable QueryUser(string userid)
         {
-            var SubData = Db.Queryable<UserModel>().Where(user => user.State < 1 && user.NumberID == userid).ToDataTable();
+            var SubData = Db.Queryable<UserModel>().Where(user => user.State == 1 && user.NumberID == userid).ToDataTable();
             return SubData;
         }
     }

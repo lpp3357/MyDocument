@@ -33,11 +33,14 @@ namespace OverHeadRecord.BLL.V1
         /// <summary>
         /// 查询开销列表
         /// </summary>
+        /// <param name="OverDate">查询日期</param>
+        /// <param name="userid">用户编号</param>
         /// <returns></returns>
-        public List<OverHeadVM> QueryOverHead(string OverDate)
+        public object QueryOverHead(string Year, string Month, string Day, string userid)
         {
-            DataTable data = overHeadDao.QueryOverHead(OverDate);
-            return DataConversion.DataTableConvertToList<OverHeadVM>(data);
+            //DataTable data = overHeadDao.QueryOverHead(Year, Month, Day, userid);
+            //return DataConversion.DataTableConvertToList<OverHeadVM>(data);
+            return overHeadDao.QueryOverHead(Year, Month, Day, userid);
         }
     }
 }

@@ -42,9 +42,10 @@
     </mu-flex>
     <mu-flex align-self="center" class="flex-selectstyle">
       <mu-flex justify-content="center" align-self="center" class="name-styleTxt">日期时间：</mu-flex>
-      <mu-row gutter class="inputrow-style">
+      <mu-row gutter class="inputrow-style" style="width:75%">
         <mu-date-input v-model="overDate" type="dateTime" label-float full-width landscape></mu-date-input>
       </mu-row>
+      <button class="btn-front-style" @click="FrontDate">前一天</button>
     </mu-flex>
     <mu-flex align-self="center" class="flex-selectstyle">
       <mu-flex justify-content="center" align-self="center" class="name-styleTxt">数值：</mu-flex>
@@ -59,10 +60,16 @@
       </mu-row>
     </mu-flex>
     <mu-flex align-self="center">
+      <button type="button" class="btn-style" @click="ToCreateClass">创建分类</button>
       <button type="button" class="btn-style" @click="AddOverHead">添加</button>
     </mu-flex>
-    <mu-flex align-self="center" style="margin-top:10px">
-      <button type="button" class="btn-style" @click="ToCreateClass">创建分类</button>
+    <mu-flex align-self="center">
+      <button
+        type="button"
+        class="btn-style"
+        @click="QueryOverHead"
+        style="width:98%;background-color: #9edd55;"
+      >查询开销</button>
     </mu-flex>
   </div>
 </template>
@@ -149,10 +156,10 @@ export default {
         "OverHead/AddOverHead",
         para,
         r => {
-          this.LoadMainClass();
-          this.overDate = "";
-          this.dataNumber = "";
-          this.Notes = "";
+          // this.LoadMainClass();
+          // this.overDate = "";
+          // this.dataNumber = "";
+          // this.Notes = "";
           this.$Msg.TipAlert(r.msg);
         },
         m => {
@@ -160,8 +167,34 @@ export default {
         }
       );
     },
+    //前往创建分类页
     ToCreateClass() {
       this.$router.push({ path: "/CreateClass?use=" + this.$MyIndex.MyToken });
+    },
+    //前往查询开销页
+    QueryOverHead() {
+      this.$router.push({
+        path: "/QueryOverHead?use=" + this.$MyIndex.MyToken
+      });
+    },
+    //加载前一天
+    FrontDate() {
+      // this.overDate
+      var para = { CurrentDate: this.overDate };
+      this.$api.post(
+        "User/GetFrontDate",
+        para,
+        r => {
+          if (r.data != "" && r.data != "undefined") {
+            // this.$Msg.TipAlert(r.data);
+            this.overDate = r.data + "";
+            this.overDate = "2019-07-05 09:00";
+          }
+        },
+        m => {
+          this.$Msg.TipAlert(m);
+        }
+      );
     }
   },
   watch: {

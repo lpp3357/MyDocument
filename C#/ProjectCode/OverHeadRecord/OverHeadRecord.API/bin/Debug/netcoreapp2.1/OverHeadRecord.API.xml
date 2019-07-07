@@ -83,6 +83,37 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:OverHeadRecord.API.Controllers.v1.GeneralController">
+            <summary>
+            分类控制器
+            </summary>
+        </member>
+        <member name="F:OverHeadRecord.API.Controllers.v1.GeneralController.generalBLL">
+            <summary>
+            分类逻辑处理类
+            </summary>
+        </member>
+        <member name="F:OverHeadRecord.API.Controllers.v1.GeneralController.msg">
+            <summary>
+            返回的消息
+            </summary>
+        </member>
+        <member name="F:OverHeadRecord.API.Controllers.v1.GeneralController.result">
+            <summary>
+            返回的结果
+            </summary>
+        </member>
+        <member name="F:OverHeadRecord.API.Controllers.v1.GeneralController.data">
+            <summary>
+            返回的数据
+            </summary>
+        </member>
+        <member name="M:OverHeadRecord.API.Controllers.v1.GeneralController.GetQueryDate(System.String,System.String)">
+            <summary>
+            查询主分类列表   v1
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:OverHeadRecord.API.Controllers.v1.OverHeadController">
             <summary>
             开销控制器
@@ -107,12 +138,51 @@
             <summary>
             添加开销    v1
             </summary>
+            <param name="model">开销model</param>
             <returns></returns>
         </member>
-        <member name="M:OverHeadRecord.API.Controllers.v1.OverHeadController.QueryOverHead(System.String)">
+        <member name="M:OverHeadRecord.API.Controllers.v1.OverHeadController.QueryOverHead(System.String,System.String,System.String,System.String)">
             <summary>
             查询开销列表   v1
             </summary>
+            <param name="Year">查询年份</param>
+            <param name="Month">查询月份</param>
+            <param name="Day">查询天数</param>
+            <param name="userid">用户编号</param>
+            <returns></returns>
+        </member>
+        <member name="T:OverHeadRecord.API.Controllers.v1.UserController">
+            <summary>
+            用户控制器
+            </summary>
+        </member>
+        <member name="F:OverHeadRecord.API.Controllers.v1.UserController.userBLL">
+            <summary>
+            用户逻辑处理类
+            </summary>
+        </member>
+        <member name="F:OverHeadRecord.API.Controllers.v1.UserController.msg">
+            <summary>
+            返回的消息
+            </summary>
+        </member>
+        <member name="F:OverHeadRecord.API.Controllers.v1.UserController.data">
+            <summary>
+            返回的数据
+            </summary>
+        </member>
+        <member name="M:OverHeadRecord.API.Controllers.v1.UserController.QueryUser(System.String)">
+            <summary>
+            查询用户信息   v1
+            </summary>
+            <param name="userid">用户编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:OverHeadRecord.API.Controllers.v1.UserController.GetFrontDate(System.String)">
+            <summary>
+            获取前一天的日期
+            </summary>
+            <param name="CurrentDate">当前日期</param>
             <returns></returns>
         </member>
     </members>

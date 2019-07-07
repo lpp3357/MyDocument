@@ -37,6 +37,7 @@ namespace OverHeadRecord.API.Controllers.v1
         /// <summary>
         /// 添加开销    v1
         /// </summary>
+        /// <param name="model">开销model</param>
         /// <returns></returns>
         [HttpPost("AddOverHead")]
         public JsonResult AddOverHead(OverHeadModel model)
@@ -50,11 +51,15 @@ namespace OverHeadRecord.API.Controllers.v1
         /// <summary>
         /// 查询开销列表   v1
         /// </summary>
+        /// <param name="Year">查询年份</param>
+        /// <param name="Month">查询月份</param>
+        /// <param name="Day">查询天数</param>
+        /// <param name="userid">用户编号</param>
         /// <returns></returns>
         [HttpPost("QueryOverHead")]
-        public JsonResult QueryOverHead(string OverDate)
+        public JsonResult QueryOverHead(string Year, string Month, string Day, string userid)
         {
-            data = overHeadBLL.QueryOverHead(OverDate);
+            data = overHeadBLL.QueryOverHead(Year, Month, Day, userid);
             return Json(new ResultClass(true, data));
         }
 

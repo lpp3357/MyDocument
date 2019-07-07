@@ -74,5 +74,10 @@ namespace OverHeadRecord.Model.V1
         /// </summary>
         [SugarColumn(IsIgnore = true)]
         public string FromValueName { get; set; }
+
+        /// <summary>
+        /// 使用时间
+        /// </summary>
+        public string UseTimeStr { get; set; }
     }
 }

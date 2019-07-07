@@ -4,6 +4,11 @@ import Msg from '../api/MsgIndex'
 
 // 配置API接口地址
 var root = 'http://www.penglin.xyz:8002/api/'
+//var root = 'http://localhost:58547/api/'
+
+
+//是否为正确用户
+var IsUser = false;
 
 // 引用axios
 var axios = require('axios')
@@ -37,7 +42,7 @@ function filterNull(o) {
   另外，不同的项目的处理方法也是不一致的，这里出错就是简单的alert
 */
 
-function apiAxios(method, url, params, success, failure) {
+async function apiAxios(method, url, params, success, failure) {
     if (MyIndex.MyToken == null || MyIndex.MyToken == "" || MyIndex.MyToken == "null") {
         Msg.TipAlert("缺少用户信息!");
         return;
@@ -46,6 +51,12 @@ function apiAxios(method, url, params, success, failure) {
         params = { userid: MyIndex.MyToken }
     } else {
         Vue.set(params, 'userid', MyIndex.MyToken)
+    }
+    //验证用户
+    await queryUser();
+    if (!IsUser) {
+        Msg.TipAlert("获取用户信息失败!");
+        return;
     }
     params = filterNull(params)
     axios({
@@ -65,7 +76,7 @@ function apiAxios(method, url, params, success, failure) {
             }
         })
         .catch(function (err) {
-            console.log(err);
+            console.log(111 + err);
             // let res = err.response
             // if (err) {
             //     window.alert('api error, HTTP CODE: ' + res.status)
@@ -87,4 +98,23 @@ export default {
     delete: function (url, params, success, failure) {
         return apiAxios('DELETE', url, params, success, failure)
     }
+}
+
+//获取用户信息
+async function queryUser() {
+    await axios({
+        method: "POST",
+        url: "User/QueryUser",
+        data: { userid: MyIndex.MyToken },
+        params: { userid: MyIndex.MyToken },
+        baseURL: root,
+        withCredentials: false
+    })
+        .then(function (res) {
+            if (res.data.data.length > 0) {
+                IsUser = true;
+            }
+        })
+        .catch(function (err) {
+        });
 }
