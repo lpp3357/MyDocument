@@ -78,6 +78,7 @@ namespace OverHeadRecord.Model.V1
         /// <summary>
         /// 使用时间
         /// </summary>
+        [SugarColumn(IsIgnore = true)]
         public string UseTimeStr { get; set; }
     }
 }

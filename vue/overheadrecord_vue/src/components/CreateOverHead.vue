@@ -188,7 +188,7 @@ export default {
           if (r.data != "" && r.data != "undefined") {
             // this.$Msg.TipAlert(r.data);
             this.overDate = r.data + "";
-            this.overDate = "2019-07-05 09:00";
+            //this.overDate = "2019-07-05 09:00";
           }
         },
         m => {
