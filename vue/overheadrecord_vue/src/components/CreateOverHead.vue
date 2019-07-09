@@ -43,7 +43,13 @@
     <mu-flex align-self="center" class="flex-selectstyle">
       <mu-flex justify-content="center" align-self="center" class="name-styleTxt">日期时间：</mu-flex>
       <mu-row gutter class="inputrow-style" style="width:75%">
-        <mu-date-input v-model="overDate" type="dateTime" label-float full-width landscape></mu-date-input>
+        <mu-date-input
+          v-model="overDate"
+          type="dateTime"
+          label-float
+          full-width
+          value-format="yyyy-MM-dd HH:mm"
+        ></mu-date-input>
       </mu-row>
       <button class="btn-front-style" @click="FrontDate">前一天</button>
     </mu-flex>
@@ -58,6 +64,9 @@
       <mu-row gutter class="inputrow-style">
         <mu-text-field fill="true" v-model="Notes" style="width:100%"></mu-text-field>
       </mu-row>
+    </mu-flex>
+    <mu-flex justify-content="center" inline :key="way.ID" v-for="way in normal">
+      <mu-radio :value="way.ID" v-model="DefaultWay" :label="way.Name"></mu-radio>
     </mu-flex>
     <mu-flex align-self="center">
       <button type="button" class="btn-style" @click="ToCreateClass">创建分类</button>
@@ -91,7 +100,13 @@ export default {
       subClassNumber: "",
       fromClassNumber: "",
       dataNumber: "",
-      Notes: ""
+      Notes: "",
+      normal: [
+        { ID: 1, Name: "WX" },
+        { ID: 2, Name: "Alipay" },
+        { ID: 3, Name: "Other" }
+      ],
+      DefaultWay: 1
     };
   },
   methods: {

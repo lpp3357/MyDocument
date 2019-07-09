@@ -90,7 +90,7 @@
         </member>
         <member name="F:OverHeadRecord.API.Controllers.v1.GeneralController.generalBLL">
             <summary>
-            分类逻辑处理类
+            通用业务逻辑类
             </summary>
         </member>
         <member name="F:OverHeadRecord.API.Controllers.v1.GeneralController.msg">
@@ -110,7 +110,7 @@
         </member>
         <member name="M:OverHeadRecord.API.Controllers.v1.GeneralController.GetQueryDate(System.String,System.String)">
             <summary>
-            查询主分类列表   v1
+            获取 当前月及天数   v1
             </summary>
             <returns></returns>
         </member>

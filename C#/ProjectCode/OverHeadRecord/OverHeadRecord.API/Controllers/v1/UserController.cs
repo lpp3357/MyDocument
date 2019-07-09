@@ -55,7 +55,7 @@ namespace OverHeadRecord.API.Controllers.v1
         {
             DateTime dateTime;
             DateTime.TryParse(CurrentDate, out dateTime);
-            data = dateTime.AddDays(-1).ToString("yyyy-MM-dd HH:mm");
+            data = dateTime.AddDays(-1);
             return Json(new ResultClass(true, data));
         }
     }
