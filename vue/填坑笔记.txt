@@ -1,0 +1,4 @@
+1.vue 标准时间日期转换 
+	a.先安装moment包：npm install moment
+	b.在组件中引入moment: import moment from "moment"
+	c.在组件中使用：let str = moment(new Date()).format("YYYY-MM-DD hh:mm:ss") //  2018-04-24 09:55:40

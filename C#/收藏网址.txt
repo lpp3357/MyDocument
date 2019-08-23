@@ -12,3 +12,5 @@
 	      ¹ÙÍø https://docs.microsoft.com/zh-cn/aspnet/core/security/cors?view=aspnetcore-2.2#ecors
 
 
+
+.net core ¿ò¼Ü   https://www.cnblogs.com/coldairarrow/p/9641360.html

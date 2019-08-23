@@ -48,9 +48,10 @@
           type="dateTime"
           label-float
           full-width
-          value-format="yyyy-MM-dd HH:mm"
+          @change="dateChange()"
         ></mu-date-input>
       </mu-row>
+      <!-- value-format="yyyy-MM-dd HH:mm" -->
       <button class="btn-front-style" @click="FrontDate">前一天</button>
     </mu-flex>
     <mu-flex align-self="center" class="flex-selectstyle">
@@ -83,6 +84,7 @@
   </div>
 </template>
 <script>
+import moment from "moment";
 export default {
   created() {
     //获取用户信息
@@ -164,7 +166,7 @@ export default {
         subClassID: this.subClassNumber,
         fromClassID: this.fromClassNumber,
         dataNumber: this.dataNumber,
-        useTime: this.overDate,
+        useTime: moment(this.overDate).format("YYYY-MM-DD hh:mm:ss"),
         note: this.Notes
       };
       this.$api.post(
@@ -210,6 +212,9 @@ export default {
           this.$Msg.TipAlert(m);
         }
       );
+    },
+    dateChange() {
+      console.log(this.overDate);
     }
   },
   watch: {
