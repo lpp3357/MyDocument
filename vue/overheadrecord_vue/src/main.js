@@ -23,6 +23,7 @@ import './css/mainapp.css'
 
 //引用自定义的index.js
 import MyIndex from './myjs/index.js'
+import { create } from 'domain';
 //绑定到全局
 Vue.prototype.$MyIndex = MyIndex
 

@@ -34,7 +34,7 @@ namespace OverHeadRecord.DAO.V1
         {
             string StartDate = string.Empty;
             string EndDate = string.Empty;
-            if (!string.IsNullOrWhiteSpace(Year) && string.IsNullOrWhiteSpace(Month) && string.IsNullOrWhiteSpace(Day))
+            if (!string.IsNullOrWhiteSpace(Year) && (string.IsNullOrWhiteSpace(Month) || Month == "0") && (string.IsNullOrWhiteSpace(Day) || Day == "0"))
             {
                 //获取一年的范围
                 StartDate = Year + "-01-01";
