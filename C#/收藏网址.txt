@@ -14,3 +14,6 @@
 
 
 .net core ¿ò¼Ü   https://www.cnblogs.com/coldairarrow/p/9641360.html
+
+
+VS2019 https://bbs.csdn.net/topics/392562283
