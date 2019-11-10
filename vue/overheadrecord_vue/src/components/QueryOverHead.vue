@@ -1,5 +1,5 @@
 <template>
-  <div class="background">
+  <div class="background" id="aoo">
     <mu-appbar style="width: 100%;" title="查询开销" color="#03a9f4">
       <mu-button icon slot="left" @click="backClick()">
         <mu-icon value="<" color:red></mu-icon>
@@ -71,7 +71,7 @@ export default {
       CurrentYear: 1, //选中年
       listMonth: [{ ID: 0, Value: "月份" }], //月下拉列表
       CurrentMonth: 1, //选中月
-      listDay: [{ ID: 0, Value: "0" }], //天下拉列表
+      listDay: [{ ID: 0, Value: "天数" }], //天下拉列表
       CurrentDay: 1, //选中天
       columns: [
         // 定义table表头
@@ -83,7 +83,9 @@ export default {
         { title: "备注" }
       ],
       Overlist: [],
-      OutTotal: "支出总量：0"
+      OutTotal: "支出总量：0",
+      listMain: [{ numberID: 1, valueName: "111" }],
+      mainClassNumber: ""
     };
   },
   methods: {
@@ -106,6 +108,7 @@ export default {
         var TotalDays = r.data[1].split(":")[1]; //当前月总天数
         var total = parseInt(TotalDays) + 1;
         this.listDay = [];
+        this.listDay.push({ ID: 0, Value: "天数" });
         for (let index = 1; index < total; index++) {
           this.listDay.push({ ID: index, Value: index + "" });
         }

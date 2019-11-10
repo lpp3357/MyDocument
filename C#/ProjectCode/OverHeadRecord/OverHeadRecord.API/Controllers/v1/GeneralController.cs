@@ -19,7 +19,7 @@ namespace OverHeadRecord.API.Controllers.v1
     public class GeneralController : Controller
     {
         /// <summary>
-        /// 分类逻辑处理类
+        /// 通用业务逻辑类
         /// </summary>
         private GeneralBLL generalBLL = new GeneralBLL();
         /// <summary>
@@ -36,7 +36,7 @@ namespace OverHeadRecord.API.Controllers.v1
         private object data = null;
 
         /// <summary>
-        /// 查询主分类列表   v1
+        /// 获取 当前月及天数   v1
         /// </summary>
         /// <returns></returns>
         [HttpPost("GetQueryDate")]

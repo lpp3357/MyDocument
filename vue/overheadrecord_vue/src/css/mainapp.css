@@ -110,3 +110,9 @@
     margin-bottom: -5%;
     margin-right: 1%;
 }
+
+.qo-classSelect-style{
+    max-height: 15%; 
+   margin-left: 3%;
+    width: 30%;
+}
