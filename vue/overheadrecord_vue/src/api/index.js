@@ -3,8 +3,8 @@ import MyIndex from '../myjs/index'
 import Msg from '../api/MsgIndex'
 
 // 配置API接口地址
-//var root = 'http://www.penglin.xyz:8002/api/'
-var root = 'http://localhost:58547/api/'
+var root = 'http://www.penglin.xyz:8002/api/'
+//var root = 'http://localhost:58547/api/'
 
 
 //是否为正确用户

@@ -1,0 +1,51 @@
+SELECT   索引名称=a.name 
+
+,表名=c.name 
+,索引字段名=d.name 
+,索引字段位置=d.colid 
+FROM  sysindexes  a 
+JOIN  sysindexkeys  b  ON  a.id=b.id  AND  a.indid=b.indid 
+JOIN  sysobjects  c  ON  b.id=c.id 
+JOIN  syscolumns  d  ON  b.id=d.id  AND  b.colid=d.colid 
+WHERE  a.indid  NOT IN(0,255) 
+-- and  c.xtype='U'  and  c.status>0 --查所有用户表 
+AND  c.name='OverHeadModel' --查指定表 
+ORDER BY  c.name,a.name,d.name
+
+
+
+
+
+
+
+SELECT
+TableId=O.[object_id],
+TableName=O.Name,
+IndexId=ISNULL(KC.[object_id],IDX.index_id),
+IndexName=IDX.Name,
+IndexType=ISNULL(KC.type_desc,'Index'),
+Index_Column_id=IDXC.index_column_id,
+ColumnID=C.Column_id,
+ColumnName=C.Name,
+Sort=CASE INDEXKEY_PROPERTY(IDXC.[object_id],IDXC.index_id,IDXC.index_column_id,'IsDescending')
+WHEN 1 THEN 'DESC' WHEN 0 THEN 'ASC' ELSE '' END,
+PrimaryKey=CASE WHEN IDX.is_primary_key=1 THEN N'√'ELSE N'' END,
+[UQIQUE]=CASE WHEN IDX.is_unique=1 THEN N'√'ELSE N'' END,
+Ignore_dup_key=CASE WHEN IDX.ignore_dup_key=1 THEN N'√'ELSE N'' END,
+Disabled=CASE WHEN IDX.is_disabled=1 THEN N'√'ELSE N'' END,
+Fill_factor=IDX.fill_factor,
+Padded=CASE WHEN IDX.is_padded=1 THEN N'√'ELSE N'' END
+FROM sys.indexes IDX 
+INNER JOIN sys.index_columns IDXC
+ON IDX.[object_id]=IDXC.[object_id]
+AND IDX.index_id=IDXC.index_id
+LEFT JOIN sys.key_constraints KC
+ON IDX.[object_id]=KC.[parent_object_id]
+AND IDX.index_id=KC.unique_index_id
+INNER JOIN sys.objects O
+ON O.[object_id]=IDX.[object_id]
+INNER JOIN sys.columns C
+ON O.[object_id]=C.[object_id]
+AND O.type='U'
+AND O.is_ms_shipped=0
+AND IDXC.Column_id=C.Column_id where O.name='cz201' --cz201是你要查询的表
